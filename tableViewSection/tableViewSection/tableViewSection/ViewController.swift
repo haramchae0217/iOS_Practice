@@ -45,6 +45,7 @@ extension ViewController: UITableViewDataSource{
         
         
         
+        
         return cell
     }
 }
@@ -59,6 +60,8 @@ extension ViewController: UITableViewDelegate{
         // cell을 눌렀을 때 detailVC로 회면전환
         // detailVC에 있는 contentlabel에 적힌 text를 detailVC의 contentTextField에 넘겨줄것
         detailVC.content = datas[indexPath.row]
+        detailVC.row = indexPath.row
+        detailVC.section = indexPath.section
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

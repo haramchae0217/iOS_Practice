@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     
     var content: String?
     var row: Int? //datas의 몇번째 정보인지 == tableView에 몇번째에 있는지
-    var section: Int?
+    //var section: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

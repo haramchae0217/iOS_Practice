@@ -11,21 +11,13 @@ class MemoViewController: UIViewController {
 
     @IBOutlet weak var memoTextView: UITextView!
     
-    var memo: String?
-    var row: Int? //몇번째 정보인지 == tableView에 몇번째에 있는지
-    
-    func getDateToString(date: Date, format: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        dateFormatter.timeZone = NSTimeZone(name: "ko_KR") as TimeZone?
-        
-        return dateFormatter.string(from: date)
-    }
+    var memo: Memo?
+    var rowNumber: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         createRightBarButtonItem()
-        memoTextView.text = memo
+        memoTextView.text = memo?.content
         
     }
     
@@ -34,16 +26,34 @@ class MemoViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    @objc func updateButtonClicked(){
-        guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "mainVC") as? ViewController else { return }
-        if let row = row {
-            mainVC.memoTitle[row] = memoTextView.text!
-            //mainVC.memoDate[row] = getDateToString(date: Date, format: String)()
-            self.navigationController?.pushViewController(mainVC, animated: true)
+    @objc func updateButtonClicked() {
+        
+        // 1. content가 변경되었는지 체크
+        
+        guard let memo = memo else { return }
+        if memo.content == memoTextView.text {
+            UIAlertController.showAlert(message: "변경사항이 없습니다.\n변경 후 다시 시도해주세요.", vc: self)
+            return
+        }
+        // 3. 변경할 메모 추가하기
+        // 새로운 메모 정보를 담을 변수 선언
+        let newMemo = Memo(content: memoTextView.text)
+        
+        // 2. row번째의 해당하는 메모리스트의 메모를 삭제
+        if let row = rowNumber {
+            Memo.memoList.remove(at: row)
+            Memo.memoList.append(newMemo)
+        }
+        
+        
+        self.navigationController?.popViewController(animated: true)
             //didselectrowat이랑 비슷
             //cell이 아닌 button을 눌렀을 때 발생하는 동작 기입
-        } else { print("인덱스 값이 비어있음 ") }
     }
 
 }
 
+
+// 복습
+// viewLifeCycle - 시점
+// static keyword - 프로퍼티 3종류

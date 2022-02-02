@@ -33,13 +33,16 @@ class MemoViewController: UIViewController {
         let rightBarButton: UIBarButtonItem = UIBarButtonItem(title: "수정하기",style: .done, target: self, action: #selector(updateButtonClicked))
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
+    
     @objc func updateButtonClicked(){
         guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "mainVC") as? ViewController else { return }
         if let row = row {
             mainVC.memoTitle[row] = memoTextView.text!
             //mainVC.memoDate[row] = getDateToString(date: Date, format: String)()
             self.navigationController?.pushViewController(mainVC, animated: true)
-        } else { print("인덱스 값이 비어있음 ")}
+            //didselectrowat이랑 비슷
+            //cell이 아닌 button을 눌렀을 때 발생하는 동작 기입
+        } else { print("인덱스 값이 비어있음 ") }
     }
 
 }

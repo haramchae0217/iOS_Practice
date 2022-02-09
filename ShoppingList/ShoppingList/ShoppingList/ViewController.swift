@@ -12,12 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var ShoppingListTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    let shoppingList: [ShoppingItem] = [
-        ShoppingItem(name: "apple"),
-        ShoppingItem(name: "banana"),
-        ShoppingItem(name: "kiwi")
-    ]
-    
+    var shoppingList: [ShoppingItem] = []
+   
 //    var checkedList: [ShoppingItem] = [ShoppingItem(name: "커피")]
 //    var notCheckedList: [ShoppingItem] = [ShoppingItem(name: "차"), ShoppingItem(name: "집")]
     
@@ -28,7 +24,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addShoppingListButton(_ sender: UIButton) {
-        
+        let list = ShoppingListTextField.text!
+        if list.isEmpty {
+            UIAlertController.showAlert(message: "추가 목록을 입력하세요.", vc: self)
+            return
+        }
+        shoppingList.append(ShoppingItem(name: ShoppingListTextField.text!))
+        self.tableView.reloadData()
         
     }
     
@@ -101,3 +103,5 @@ extension ViewController: UITableViewDelegate {
 }
 
 // 구조체, 클래스, 배열, 조건문, 반복문
+
+

@@ -15,6 +15,7 @@
 		838216E127B202D4003A20DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838216DF27B202D4003A20DC /* LaunchScreen.storyboard */; };
 		838216E927B20453003A20DC /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838216E827B20453003A20DC /* ShoppingListTableViewCell.swift */; };
 		838216EB27B20DF2003A20DC /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838216EA27B20DF2003A20DC /* ShoppingItem.swift */; };
+		8393405A27B420EB00DE45E0 /* UIAlertController++Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393405927B420EB00DE45E0 /* UIAlertController++Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		838216E227B202D4003A20DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		838216E827B20453003A20DC /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
 		838216EA27B20DF2003A20DC /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
+		8393405927B420EB00DE45E0 /* UIAlertController++Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController++Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				838216D827B202D3003A20DC /* ViewController.swift */,
 				838216EA27B20DF2003A20DC /* ShoppingItem.swift */,
 				838216DA27B202D3003A20DC /* Main.storyboard */,
+				8393405927B420EB00DE45E0 /* UIAlertController++Extension.swift */,
 				838216E827B20453003A20DC /* ShoppingListTableViewCell.swift */,
 				838216DD27B202D4003A20DC /* Assets.xcassets */,
 				838216DF27B202D4003A20DC /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				838216E927B20453003A20DC /* ShoppingListTableViewCell.swift in Sources */,
 				838216D527B202D3003A20DC /* AppDelegate.swift in Sources */,
 				838216EB27B20DF2003A20DC /* ShoppingItem.swift in Sources */,
+				8393405A27B420EB00DE45E0 /* UIAlertController++Extension.swift in Sources */,
 				838216D727B202D3003A20DC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

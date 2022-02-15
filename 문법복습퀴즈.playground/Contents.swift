@@ -53,15 +53,15 @@ struct DataArray {
  print("영희는 \(age)살 입니다.")
  */
 
-func question01() {
-    let item: Int = 88
-    let score: Float = 4.5
-    let item2: Int = 2
-    let place: String = "서울역"
-    
-    print("영희는 지금까지 \(item)개의 물품을 중고거래했고, 민수의 물품으로 중고거래 한 사람들은 \(score)점의 만족도를 보였습니다. 오늘도 민수는 \(item2)개의 물품을 \(place)에서 거래할 예정입니다.")
-}
-question01()
+//func question01() {
+//    let item: Int = 88
+//    let score: Float = 4.5
+//    let item2: Int = 2
+//    let place: String = "서울역"
+//
+//    print("영희는 지금까지 \(item)개의 물품을 중고거래했고, 민수의 물품으로 중고거래 한 사람들은 \(score)점의 만족도를 보였습니다. 오늘도 민수는 \(item2)개의 물품을 \(place)에서 거래할 예정입니다.")
+//}
+//question01()
 
 /*
  Q2.
@@ -83,21 +83,21 @@ question01()
  조건3. BMI지수에 따라, 저체중, 정상, 과체중, 고도비만으로 결과가 출력될 수 있도록 구현합니다.
  */
 
-func question02(height: Double, weight: Double) {
-    
-    let BMI: Double = weight / (height/100 * height/100)
-    
-    if BMI < 18.5 {
-        print("저체중")
-    } else if BMI < 23.0 {
-        print("정상")
-    } else if BMI < 25.0 {
-        print("과체중")
-    } else {
-        print("고도비만")
-    }
-}
-question02(height: 170, weight: 73)
+//func question02(height: Double, weight: Double) {
+//
+//    let BMI: Double = weight / (height/100 * height/100)
+//
+//    if BMI < 18.5 {
+//        print("저체중")
+//    } else if BMI < 23.0 {
+//        print("정상")
+//    } else if BMI < 25.0 {
+//        print("과체중")
+//    } else {
+//        print("고도비만")
+//    }
+//}
+//question02(height: 170, weight: 73)
 
 
 /*
@@ -106,16 +106,16 @@ question02(height: 170, weight: 73)
  (출력결과 예시: 선글라스 낀 이모티콘은 n개입니다)
  */
 
-func question03() {
-    var cnt = 0
-    for emoji in DataArray.emojiArray {
-        if emoji == "😎" {
-            cnt += 1
-        }
-    }
-    print("선글라스 낀 이모티콘은 \(cnt)개 입니다.")
-}
-question03()
+//func question03() {
+//    var cnt = 0
+//    for emoji in DataArray.emojiArray {
+//        if emoji == "😎" {
+//            cnt += 1
+//        }
+//    }
+//    print("선글라스 낀 이모티콘은 \(cnt)개 입니다.")
+//}
+//question03()
 
 /*
  Q4.
@@ -127,23 +127,23 @@ question03()
  (출력결과 예시: 영수는 지금까지 n개의 영화를 보았고, 평균 러닝타임은 n분, 지금까지 n일 n시간 n분 시청하셨습니다.)
  */
 
-func question04() {
-    let totalCount = DataArray.runtimeArray.count
-    var totalRunningTime = 0
-    for run in DataArray.runtimeArray {
-        totalRunningTime += run
-    }
-    let averageRunningTime = totalRunningTime / totalCount
-    
-    let minute = totalRunningTime % 60
-    let hour = totalRunningTime / 60
-    let day = hour / 24
-    let realhour = day % 24
-
-    
-    print("영수는 지금까지 \(totalCount)개의 영화를 보았고, 평균 러닝타임은 \(averageRunningTime)분, 지금까지 \(day)일 \(realhour)시간 \(minute)분 시청하셨습니다.")
-}
-question04()
+//func question04() {
+//    let totalCount = DataArray.runtimeArray.count
+//    var totalRunningTime = 0
+//    for run in DataArray.runtimeArray {
+//        totalRunningTime += run
+//    }
+//    let averageRunningTime = totalRunningTime / totalCount
+//
+//    let minute = totalRunningTime % 60
+//    let hour = totalRunningTime / 60
+//    let day = hour / 24
+//    let realhour = day % 24
+//
+//
+//    print("영수는 지금까지 \(totalCount)개의 영화를 보았고, 평균 러닝타임은 \(averageRunningTime)분, 지금까지 \(day)일 \(realhour)시간 \(minute)분 시청하셨습니다.")
+//}
+//question04()
 
 /*
  Q5.
@@ -165,24 +165,24 @@ question04()
  구글님의 대화: **
  */
 
-func question05() {
-    for i in 0..<DataArray.chatArray.count {
-        let chat = DataArray.chatArray[i]
-        if i % 2 == 0 {
-            if DataArray.blacklistArray.contains(chat) {
-                    print("철수님의 대화: **")
-            } else {
-                print("철수님의 대화: \(DataArray.chatArray[i])")
-            }
-        } else {
-            if DataArray.blacklistArray.contains(chat){
-                print("구글님의 대화: **")
-            } else {
-                print("구글님의 대화: \(DataArray.chatArray[i])")
-            }
-        }
-    }
-}
+//func question05() {
+//    for i in 0..<DataArray.chatArray.count {
+//        let chat = DataArray.chatArray[i]
+//        if i % 2 == 0 {
+//            if DataArray.blacklistArray.contains(chat) {
+//                    print("철수님의 대화: **")
+//            } else {
+//                print("철수님의 대화: \(DataArray.chatArray[i])")
+//            }
+//        } else {
+//            if DataArray.blacklistArray.contains(chat){
+//                print("구글님의 대화: **")
+//            } else {
+//                print("구글님의 대화: \(DataArray.chatArray[i])")
+//            }
+//        }
+//    }
+//}
 //question05()
 
 //func test(str: String) -> String {
@@ -228,22 +228,22 @@ func question05() {
  (출력결과 예시: 로또 번호는 [3, 10, 33, 42, 18, 31, 7] 입니다)
  */
 
-func question06() {
-    var rand: [Int] = []
-    var number: [Int] = []
-    for i in 1...45 {
-        rand.append(i)
-    }
-    rand.shuffle()
-    for i in rand {
-        number.append(i)
-        if number.count > 6 {
-            break
-        }
-    }
-   print(number)
-}
-question06()
+//func question06() {
+//    var rand: [Int] = []
+//    var number: [Int] = []
+//    for i in 1...45 {
+//        rand.append(i)
+//    }
+//    rand.shuffle()
+//    for i in rand {
+//        number.append(i)
+//        if number.count > 6 {
+//            break
+//        }
+//    }
+//   print(number)
+//}
+//question06()
 
 /*
  Q7.
@@ -252,17 +252,18 @@ question06()
  (출력결과 예시: 12345의 각 자리숫자 합은 15입니다.)
  */
 
-func question07(n: Int) -> Int {
-    var sum = 0
-    let intArray = Array(String(n))
-    
-    for i in 0...intArray.count {
-        sum += i
-    }
-    
-    return sum
-}
-question07(n: 1234)
+//func question07(n: Int) -> Int {
+//    var sum = 0
+//    let intArray = Array(String(n))
+//
+//    for i in 0...intArray.count {
+//        sum += i
+//    }
+//
+//    return sum
+//}
+//question07(n: 1234)
+
 /*
  Q8.
  영희가 이번엔 주어진 2~8자리 숫자에서 조합할 수 있는 최고의 2자리 숫자가 궁금해졌어요.
@@ -273,18 +274,12 @@ question07(n: 1234)
 
 // for문으로 풀어오기 + 위에 못푼문제 풀어오기
 func question08(n: Int) -> Int {
-//    let intArray = Array(String(n))
+
     let strNum = String(n)
     var firstNumber: Int = 0
     var secondNumber: Int = 0
-    let number:Int = 0
-   
-//    print(intArray)
-    
-//    for num in intArray {
-//        firstNumber = num
-//
-//    }
+    var tmp: Int = 0
+    var number:Int = 0
     
     strNum.forEach { char in
         let c = Int(String(char))!
@@ -299,36 +294,39 @@ func question08(n: Int) -> Int {
             
             // 3. f s 누가 더 크냐 -> 더 큰값을 f에 넣어준다.
             if firstNumber < secondNumber {
+                tmp = firstNumber
                 firstNumber = secondNumber
+                secondNumber = tmp
+            } else if tmp > secondNumber {
+                secondNumber = tmp
             }
         }
-
-        
-        print(firstNumber, secondNumber)
+        number = firstNumber + secondNumber
+        print(firstNumber, secondNumber, tmp)
     }
     
     return number
 }
 
-//question08(n: 28341)
+question08(n: 28341)
 
 
-func question09(n: Int) -> Int {
-    //    let desArr: [String] = String(n).map{ String($0) }.sorted(by: >)
-    //    return Int(desArr[0] + desArr[1])!
-    
-    var desArr: [String] = String(n).map{ String($0) }
-    desArr = desArr.sorted(by: >)
-    
-    let answer = desArr[0] + desArr[1]
-    
-    if let biggestNubmer = Int(answer) {
-        return biggestNubmer
-    } else {
-        return 0
-    }
-}
-
-question09(n: 28341) == 84
+//func question09(n: Int) -> Int {
+//    //    let desArr: [String] = String(n).map{ String($0) }.sorted(by: >)
+//    //    return Int(desArr[0] + desArr[1])!
+//
+//    var desArr: [String] = String(n).map{ String($0) }
+//    desArr = desArr.sorted(by: >)
+//
+//    let answer = desArr[0] + desArr[1]
+//
+//    if let biggestNubmer = Int(answer) {
+//        return biggestNubmer
+//    } else {
+//        return 0
+//    }
+//}
+//
+//question09(n: 28341) == 84
 
 

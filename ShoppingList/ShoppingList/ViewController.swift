@@ -118,7 +118,7 @@ extension ViewController: UITableViewDelegate {
         guard let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editShoppingListVC") as? EditShoppingListViewController else { return }
         // 2. 화면 전환해주기 전에 해주어야될 설정
         editVC.name = ShoppingItem.shoppingList[indexPath.row].name
-
+        editVC.row = indexPath.row
         // editVC.view.backgroundColor = .red
         // editVC.modalPresentationStyle = .fullScreen
         // 3. 화면전환 -> push<->pop, present<->dismiss

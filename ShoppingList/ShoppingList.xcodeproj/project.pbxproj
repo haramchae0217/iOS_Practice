@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8306ADDC27C5C8AF00E0B78F /* EditShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8306ADDB27C5C8AF00E0B78F /* EditShoppingListViewController.swift */; };
 		838216D527B202D3003A20DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838216D427B202D3003A20DC /* AppDelegate.swift */; };
 		838216D727B202D3003A20DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838216D627B202D3003A20DC /* SceneDelegate.swift */; };
 		838216D927B202D3003A20DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838216D827B202D3003A20DC /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8306ADDB27C5C8AF00E0B78F /* EditShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShoppingListViewController.swift; sourceTree = "<group>"; };
 		838216D127B202D3003A20DC /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838216D427B202D3003A20DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		838216D627B202D3003A20DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				838216D827B202D3003A20DC /* ViewController.swift */,
 				838216EA27B20DF2003A20DC /* ShoppingItem.swift */,
 				838216DA27B202D3003A20DC /* Main.storyboard */,
+				8306ADDB27C5C8AF00E0B78F /* EditShoppingListViewController.swift */,
 				8393405927B420EB00DE45E0 /* UIAlertController++Extension.swift */,
 				838216E827B20453003A20DC /* ShoppingListTableViewCell.swift */,
 				838216DD27B202D4003A20DC /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8306ADDC27C5C8AF00E0B78F /* EditShoppingListViewController.swift in Sources */,
 				838216D927B202D3003A20DC /* ViewController.swift in Sources */,
 				838216E927B20453003A20DC /* ShoppingListTableViewCell.swift in Sources */,
 				838216D527B202D3003A20DC /* AppDelegate.swift in Sources */,

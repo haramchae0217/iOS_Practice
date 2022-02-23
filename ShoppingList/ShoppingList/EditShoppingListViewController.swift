@@ -44,8 +44,13 @@ class EditShoppingListViewController: UIViewController {
         
         // 3. [선택] 수정이 되는 순간 이전화면으로 돌아가기
         self.navigationController?.popViewController(animated: true)
+        
         // 4. viewController > tableView 갱신
- 
+        /*
+         override func viewWillAppear(_ animated: Bool) {
+             tableView.reloadData()
+         }
+         */
         
     }
     

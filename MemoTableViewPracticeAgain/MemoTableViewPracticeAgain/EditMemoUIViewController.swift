@@ -34,11 +34,12 @@ class EditMemoUIViewController: UIViewController {
             UIAlertController.showAlert(message: "메모를 변경하세요.", vc: self)
             return
         }
-        let editMemoList = Memo(memoTitle: editMemo, memoDate: editDate)
+        //let editMemoList = Memo(memoTitle: editMemo, memoDate: editDate)
         if let row = row {
-            Memo.memoList.remove(at: row)
-            Memo.memoList.append(editMemoList)
+            Memo.memoList[row].memoTitle = editMemo
+            Memo.memoList[row].memoDate = editDate
         }
+        
         
         self.navigationController?.popViewController(animated: true)
     }

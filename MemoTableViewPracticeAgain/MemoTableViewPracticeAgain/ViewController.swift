@@ -48,6 +48,18 @@ extension ViewController: UITableViewDataSource {
         // guard, else - 만약 MemoTableViewCell이란 이름을 가진 tableviewcell파일이 없을 수도 있으므로 guard를 사용해 optional 타입을 해결
         
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            Memo.memoList.remove(at: indexPath.row)
+            // 실제 배열 안의 값을 지움
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            // 사라지는 방향
+        } else {
+            print("insert")
+        }
+        // 어디에 있는 줄을 지울것인가
+    }
 }
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

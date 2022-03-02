@@ -1,8 +1,8 @@
 //
 //  UIAlertController++Extension.swift
-//  ShoppingList
+//  ShoppingListPractice
 //
-//  Created by Chae_Haram on 2022/02/10.
+//  Created by Chae_Haram on 2022/03/02.
 //
 
 import UIKit
@@ -19,4 +19,3 @@ extension UIAlertController {
         
     }
 }
-

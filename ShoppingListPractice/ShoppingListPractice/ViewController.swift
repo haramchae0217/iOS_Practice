@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var shoppingListTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addShoppingListButton(_ sender: UIButton) {
+        let shopping = shoppingListTextField.text!
+        if shopping.isEmpty {
+            
+        }
         
     }
     
@@ -28,11 +33,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListCell", for: indexPath) as? ShoppingListTableViewCell else { return UITableViewCell() }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        Shopping.ShoppingList.count
     }
 }
 

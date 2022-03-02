@@ -16,6 +16,7 @@
 		83D50F3427CF657900F7EAAE /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D50F3327CF657900F7EAAE /* ShoppingListTableViewCell.swift */; };
 		83D50F3627CF66D600F7EAAE /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D50F3527CF66D600F7EAAE /* ShoppingList.swift */; };
 		83D50F3827CF6A4D00F7EAAE /* UIAlertController++Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D50F3727CF6A4D00F7EAAE /* UIAlertController++Extension.swift */; };
+		83D50F3A27CF707100F7EAAE /* EditShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D50F3927CF707100F7EAAE /* EditShoppingListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		83D50F3327CF657900F7EAAE /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
 		83D50F3527CF66D600F7EAAE /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		83D50F3727CF6A4D00F7EAAE /* UIAlertController++Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController++Extension.swift"; sourceTree = "<group>"; };
+		83D50F3927CF707100F7EAAE /* EditShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShoppingListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				83D50F1F27CF577100F7EAAE /* AppDelegate.swift */,
 				83D50F2127CF577100F7EAAE /* SceneDelegate.swift */,
 				83D50F2327CF577100F7EAAE /* ViewController.swift */,
+				83D50F3927CF707100F7EAAE /* EditShoppingListViewController.swift */,
 				83D50F3727CF6A4D00F7EAAE /* UIAlertController++Extension.swift */,
 				83D50F3527CF66D600F7EAAE /* ShoppingList.swift */,
 				83D50F3327CF657900F7EAAE /* ShoppingListTableViewCell.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D50F3A27CF707100F7EAAE /* EditShoppingListViewController.swift in Sources */,
 				83D50F2427CF577100F7EAAE /* ViewController.swift in Sources */,
 				83D50F3427CF657900F7EAAE /* ShoppingListTableViewCell.swift in Sources */,
 				83D50F3627CF66D600F7EAAE /* ShoppingList.swift in Sources */,

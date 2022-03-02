@@ -15,10 +15,6 @@ class ShoppingItem {
         self.name = name
     }
 
-    static var shoppingList: [ShoppingItem] = [
-    ShoppingItem(name: "김치"),
-     ShoppingItem(name: "양파"),
-     ShoppingItem(name: "당근")
-    ]
+    static var shoppingList: [ShoppingItem] = []
 
 }

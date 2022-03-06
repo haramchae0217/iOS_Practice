@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
         df.dateFormat = "yyyy/MM/dd"
         df.locale = Locale(identifier: "ko-KR")
         df.timeZone = TimeZone(abbreviation: "KST")
+        df.dateStyle = .medium
+        df.timeStyle = .medium
         return df
     }()
     
@@ -138,3 +140,7 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
+/*
+ calender, dateformatter, tableview 복습
+ 
+*/

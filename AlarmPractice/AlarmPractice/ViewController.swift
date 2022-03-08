@@ -30,13 +30,20 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let sortedList = Alarm.alarmList.sorted { lhs, rhs in
+            lhs.time < rhs.time
+        }
+        Alarm.alarmList = sortedList
         alarmTableView.reloadData()
+        
     }
     
     @IBAction func addAlarmButton(_ sender: UIBarButtonItem) {
         guard let addVC = self.storyboard?.instantiateViewController(withIdentifier: "addVC") as? AddAlarmViewController else { return }
         addVC.title = "알람 추가"
-        self.navigationController?.present(addVC, animated: true, completion: nil)
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(addVC, animated: true)
+        //self.navigationController?.present(addVC, animated: true, completion: nil)
     }
     
 
@@ -69,10 +76,13 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let editVC = self.storyboard?.instantiateViewController(withIdentifier: "addVC") as? AddAlarmViewController else { return }
-//        editVC.addAlarm = Alarm.alarmList[indexPath.row]
-//        editVC.row = indexPath.row
-//        self.navigationController?.present(editVC, animated: true, completion: nil)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let editVC = self.storyboard?.instantiateViewController(withIdentifier: "addVC") as? AddAlarmViewController else { return }
+        editVC.title = "알람 수정"
+        editVC.addAlarm = Alarm.alarmList[indexPath.row]
+        editVC.row = indexPath.row
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(editVC, animated: true)
+        //self.navigationController?.present(editVC, animated: true, completion: nil)
+    }
 }

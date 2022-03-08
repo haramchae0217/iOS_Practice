@@ -32,7 +32,8 @@ class AddAlarmViewController: UIViewController {
         } else {
             Alarm.alarmList.append(time)
         }
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.dismiss(animated: true, completion: nil)
         
     }
     

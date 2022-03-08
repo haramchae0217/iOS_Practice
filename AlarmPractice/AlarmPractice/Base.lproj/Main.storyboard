@@ -66,7 +66,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LFI-Aa-u45" secondAttribute="trailing" id="nOH-Zb-VdH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="알람" id="oJT-Uf-wZq">
+                    <navigationItem key="navigationItem" title="알람" largeTitleDisplayMode="always" id="oJT-Uf-wZq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rez-E7-xhh">
                             <connections>
                                 <action selector="addAlarmButton:" destination="BYZ-38-t0r" id="eRh-kh-meJ"/>
@@ -89,26 +89,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNw-UB-HbG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="o2M-SU-ctj"/>
-                                </items>
-                            </navigationBar>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="vVw-rs-sBT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="260"/>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AHh-le-UGT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vVw-rs-sBT" firstAttribute="top" secondItem="qNw-UB-HbG" secondAttribute="bottom" id="217-CK-bWy"/>
-                            <constraint firstItem="AHh-le-UGT" firstAttribute="top" secondItem="qNw-UB-HbG" secondAttribute="top" id="GLu-wx-aDG"/>
                             <constraint firstItem="vVw-rs-sBT" firstAttribute="leading" secondItem="AHh-le-UGT" secondAttribute="leading" id="VWM-zZ-ZHM"/>
                             <constraint firstItem="AHh-le-UGT" firstAttribute="trailing" secondItem="vVw-rs-sBT" secondAttribute="trailing" id="ZAU-Xz-nr9"/>
-                            <constraint firstItem="qNw-UB-HbG" firstAttribute="trailing" secondItem="vVw-rs-sBT" secondAttribute="trailing" id="cAc-ZA-kca"/>
+                            <constraint firstItem="vVw-rs-sBT" firstAttribute="top" secondItem="AHh-le-UGT" secondAttribute="top" id="amr-it-01c"/>
                             <constraint firstItem="AHh-le-UGT" firstAttribute="bottom" secondItem="vVw-rs-sBT" secondAttribute="bottom" constant="558" id="cxg-DX-NX2"/>
-                            <constraint firstItem="qNw-UB-HbG" firstAttribute="leading" secondItem="vVw-rs-sBT" secondAttribute="leading" id="ogY-HB-PcY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -117,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQs-ui-wka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884.057971014493" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1857" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C2a-k4-vv6">

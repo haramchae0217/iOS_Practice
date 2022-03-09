@@ -13,6 +13,7 @@
 		839BBF9B27D86DE9001F0309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839BBF9927D86DE9001F0309 /* Main.storyboard */; };
 		839BBF9D27D86DEA001F0309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839BBF9C27D86DEA001F0309 /* Assets.xcassets */; };
 		839BBFA027D86DEA001F0309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839BBF9E27D86DEA001F0309 /* LaunchScreen.storyboard */; };
+		839BBFA827D8CB9B001F0309 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839BBFA727D8CB9B001F0309 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		839BBF9C27D86DEA001F0309 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		839BBF9F27D86DEA001F0309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		839BBFA127D86DEA001F0309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		839BBFA727D8CB9B001F0309 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				839BBF9327D86DE9001F0309 /* AppDelegate.swift */,
 				839BBF9527D86DE9001F0309 /* SceneDelegate.swift */,
 				839BBF9727D86DE9001F0309 /* ViewController.swift */,
+				839BBFA727D8CB9B001F0309 /* Calculator.swift */,
 				839BBF9927D86DE9001F0309 /* Main.storyboard */,
 				839BBF9C27D86DEA001F0309 /* Assets.xcassets */,
 				839BBF9E27D86DEA001F0309 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				839BBF9827D86DE9001F0309 /* ViewController.swift in Sources */,
+				839BBFA827D8CB9B001F0309 /* Calculator.swift in Sources */,
 				839BBF9427D86DE9001F0309 /* AppDelegate.swift in Sources */,
 				839BBF9627D86DE9001F0309 /* SceneDelegate.swift in Sources */,
 			);

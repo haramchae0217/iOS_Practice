@@ -33,12 +33,6 @@ class ViewController: UIViewController {
         case rem = "%"
     }
     
-    func makeFormula(keypadChar: String) {
-        formula.append(keypadChar)
-        calculateFormulaLabel.text = formula
-    }
-    
-    
     func operation(a: Double, b: Double, op: Operator) -> Double {
         switch op {
         case .plus:
@@ -57,74 +51,88 @@ class ViewController: UIViewController {
     
     
     @IBAction func zeroButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "0")
+        formula.append("0")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func oneButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "1")
+        formula.append("1")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func twoButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "2")
+        formula.append("2")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func threeButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "3")
+        formula.append("3")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func fourButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "4")
+        formula.append("4")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func fiveButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "5")
+        formula.append("5")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func sixButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "6")
+        formula.append("6")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func sevenButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "7")
+        formula.append("7")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func eightButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "8")
+        formula.append("8")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func nineButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "9")
+        formula.append("9")
+        calculateFormulaLabel.text = formula
     }
     
     @IBAction func plusButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "+")
+        formula.append("+")
         num1 = Double(calculationResultLabel.text!)!
         oper = .plus
         
     }
     
     @IBAction func minusButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "-")
-        num1 = Double(calculationResultLabel.text!)!
+        formula.append("-")
+        calculateFormulaLabel.text = formula
+//        num1 = Double(calculationResultLabel.text!)!
         oper = .minus
         
     }
     
     @IBAction func multipleButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "*")
-        num1 = Double(calculationResultLabel.text!)!
+        formula.append("*")
+        calculateFormulaLabel.text = formula
+//        num1 = Double(calculationResultLabel.text!)!
         oper = .multiple
     }
     
     @IBAction func devideButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "/")
-        num1 = Double(calculationResultLabel.text!)!
+        formula.append("/")
+        calculateFormulaLabel.text = formula
+//        num1 = Double(calculationResultLabel.text!)!
         oper = .divide
     }
     
     @IBAction func remButton(_ sender: UIButton) {
-        makeFormula(keypadChar: "%")
-        num1 = Double(calculationResultLabel.text!)!
+        formula.append("%")
+        calculateFormulaLabel.text = formula
+//        num1 = Double(calculationResultLabel.text!)!
         oper = .rem
     }
     
@@ -137,11 +145,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equalButton(_ sender: UIButton) {
+    
+//        num2 = Double(calculationResultLabel.text!)!
+//        result = String(operation(a: num1, b: num2, op: oper))
+//        calculationResultLabel.text = result
         formula = ""
-        num2 = Double(calculationResultLabel.text!)!
-        result = String(operation(a: num1, b: num2, op: oper))
-        calculationResultLabel.text = result
-        
         
     }
     

@@ -17,33 +17,41 @@ class ViewController: UIViewController {
     var result: String = ""
     var num1: Double = 0.0
     var num2: Double = 0.0
-    var oper: Int = 0
+    var oper: Operator = .plus
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
+    
+    enum Operator: String {
+        case plus = "+"
+        case minus = "-"
+        case multiple = "*"
+        case divide = "/"
+        case rem = "%"
+    }
+    
     func makeFormula(keypadChar: String) {
         formula.append(keypadChar)
         calculateFormulaLabel.text = formula
-        calculationResultLabel.text = formula
     }
     
-    func operation(a: Double, b: Double, op: Int) -> Double {
+    
+    func operation(a: Double, b: Double, op: Operator) -> Double {
         switch op {
-        case 1:
+        case .plus:
             return (a + b)
-        case 2:
+        case .minus:
             return (a - b)
-        case 3:
+        case .multiple:
             return (a * b)
-        case 4:
+        case .divide:
             return (a / b)
-        case 5:
+        case .rem:
             return a.truncatingRemainder(dividingBy: b)
-        default:
-            return 0
+        
         }
     }
     
@@ -91,33 +99,33 @@ class ViewController: UIViewController {
     @IBAction func plusButton(_ sender: UIButton) {
         makeFormula(keypadChar: "+")
         num1 = Double(calculationResultLabel.text!)!
-        oper = 1
+        oper = .plus
         
     }
     
     @IBAction func minusButton(_ sender: UIButton) {
         makeFormula(keypadChar: "-")
         num1 = Double(calculationResultLabel.text!)!
-        oper = 2
+        oper = .minus
         
     }
     
     @IBAction func multipleButton(_ sender: UIButton) {
         makeFormula(keypadChar: "*")
         num1 = Double(calculationResultLabel.text!)!
-        oper = 3
+        oper = .multiple
     }
     
     @IBAction func devideButton(_ sender: UIButton) {
         makeFormula(keypadChar: "/")
         num1 = Double(calculationResultLabel.text!)!
-        oper = 4
+        oper = .divide
     }
     
     @IBAction func remButton(_ sender: UIButton) {
         makeFormula(keypadChar: "%")
         num1 = Double(calculationResultLabel.text!)!
-        oper = 5
+        oper = .rem
     }
     
     @IBAction func allClearButton(_ sender: UIButton) {

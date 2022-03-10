@@ -129,9 +129,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equalButton(_ sender: UIButton) {
+        formula = ""
         num2 = Double(calculationResultLabel.text!)!
         result = String(operation(a: num1, b: num2, op: oper))
         calculationResultLabel.text = result
+        
         
     }
     

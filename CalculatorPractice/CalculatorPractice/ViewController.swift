@@ -14,9 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var calculationResultLabel: UILabel!
     
     var formula: String = ""
-    var result: String = ""
-    var num1: Double = 0.0
-    var num2: Double = 0.0
     var oper: Operator = .plus
     
     override func viewDidLoad() {
@@ -102,7 +99,7 @@ class ViewController: UIViewController {
     
     @IBAction func plusButton(_ sender: UIButton) {
         formula.append("+")
-        num1 = Double(calculationResultLabel.text!)!
+        calculateFormulaLabel.text = formula
         oper = .plus
         
     }
@@ -110,7 +107,6 @@ class ViewController: UIViewController {
     @IBAction func minusButton(_ sender: UIButton) {
         formula.append("-")
         calculateFormulaLabel.text = formula
-//        num1 = Double(calculationResultLabel.text!)!
         oper = .minus
         
     }
@@ -118,21 +114,18 @@ class ViewController: UIViewController {
     @IBAction func multipleButton(_ sender: UIButton) {
         formula.append("*")
         calculateFormulaLabel.text = formula
-//        num1 = Double(calculationResultLabel.text!)!
         oper = .multiple
     }
     
     @IBAction func devideButton(_ sender: UIButton) {
         formula.append("/")
         calculateFormulaLabel.text = formula
-//        num1 = Double(calculationResultLabel.text!)!
         oper = .divide
     }
     
     @IBAction func remButton(_ sender: UIButton) {
         formula.append("%")
         calculateFormulaLabel.text = formula
-//        num1 = Double(calculationResultLabel.text!)!
         oper = .rem
     }
     
@@ -140,21 +133,54 @@ class ViewController: UIViewController {
         calculateFormulaLabel.text = "0"
         calculationResultLabel.text = "0"
         formula = ""
-        result = ""
         
     }
     
     @IBAction func equalButton(_ sender: UIButton) {
-    
 //        num2 = Double(calculationResultLabel.text!)!
 //        result = String(operation(a: num1, b: num2, op: oper))
 //        calculationResultLabel.text = result
-        formula = ""
+
+        // for, while, foreach중 "foreach" <- 문자열이랑 같이 쓰면 좋음
+        // 문자열 -> 배열 -> for
+        var numbers: [Double] = []
+        var temp: String = "" // 연산자를 만나면 numbers에 넣어주고, temp는 비우고
+        var op: Operator?
         
+        // 연산기호는 letter가 아니다.
+        formula.forEach { char in
+            if temp.isEmpty, Operator.init(rawValue: String(char)) == nil {
+                temp.append(char)
+            } else {
+                if let oper = Operator.init(rawValue: String(char)) {
+                        if let number = Double(temp), op == nil {
+                        numbers.append(number)
+                    }
+                    op = oper
+                    temp = ""
+                } else {
+                    if Operator.init(rawValue: String(char)) == nil {
+                        temp.append(char)
+                    }
+                }
+            }
+            
+        }
+        if let lastNumber = Double(temp) {
+            numbers.append(lastNumber)
+        } else{
+         print("올바르지 않은 입력입니다.")
+        }
+        guard let op = op else { return }
+        let result = operation(a: numbers[0], b: numbers[1], op: op)
+        calculateFormulaLabel.text = "\(result)"
+        calculationResultLabel.text = " = \(result)"
+        
+        formula = "\(result)"
     }
     
     @IBAction func positiveNegativeButton(_ sender: UIButton) {
-        calculationResultLabel.text = "-\(result)"
+        //calculationResultLabel.text = "-\(result)"
     }
     
     @IBAction func dotButton(_ sender: UIButton) {

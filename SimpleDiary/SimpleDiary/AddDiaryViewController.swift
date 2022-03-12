@@ -17,13 +17,16 @@ class AddDiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addDiaryContentTextView.delegate = self
+        imagePicker.delegate = self
+//        addDiaryImageView.contentMode = .scaleToFill
+//        addDiaryImageView.contentMode = .scaleAspectFit
+        addDiaryImageView.contentMode = .scaleAspectFill
+        
         if addDiaryContentTextView.text.isEmpty {
             addDiaryContentTextView.text = "내용을 입력해주세요."
             addDiaryContentTextView.textColor = .lightGray
         }
-        
-        addDiaryContentTextView.delegate = self
-        imagePicker.delegate = self
         
         title = "Add Diary"
         let rightBarButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(createBarButton))
@@ -35,16 +38,15 @@ class AddDiaryViewController: UIViewController {
         
         let cameraButton = UIAlertAction(title: "카메라", style: .default) { _ in
             print("camera on")
-            self.imagePicker.sourceType = .camera
-            self.present(self.imagePicker, animated: true, completion: nil)
+//            self.imagePicker.sourceType = .camera
+//            self.present(self.imagePicker, animated: true, completion: nil)
         }
         let photoLibraryButton = UIAlertAction(title: "사진첩", style: .default) { _ in
             print("photoLibrary on")
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true, completion: nil)
         }
-//        let cameraButton = UIAlertAction(title: "카메라", style: .default, handler: nil)
-//        let photoLibrary = UIAlertAction(title: "사진첩", style: .default, handler: nil)
+       
         let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         alertAction.addAction(cameraButton)
@@ -86,5 +88,12 @@ extension AddDiaryViewController: UITextViewDelegate {
 }
 
 extension AddDiaryViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            addDiaryImageView.image = image
+        } else {
+            print("이미지 선택 실패")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
 }

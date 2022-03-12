@@ -133,6 +133,7 @@
                             <constraint firstItem="VNX-R2-6IY" firstAttribute="bottom" secondItem="25M-Gb-MNp" secondAttribute="bottom" id="i5x-rB-NtR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="W0X-Av-j49"/>
                     <connections>
                         <outlet property="addDiaryContentTextView" destination="25M-Gb-MNp" id="Fgs-6V-Zi5"/>
                         <outlet property="addDiaryImageView" destination="zLo-8X-3pm" id="ftG-fz-fHj"/>

@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        diaryImageView.contentMode = .scaleAspectFill
   
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
             diaryTitleLabel.text = Diary.diaryData.content
         }
         diaryDateLabel.text = "\(Diary.diaryData.date)"
+        diaryImageView.image = Diary.diaryData.picture
         
     }
     

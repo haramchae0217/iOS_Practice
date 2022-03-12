@@ -91,6 +91,7 @@ extension AddDiaryViewController: UIImagePickerControllerDelegate & UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             addDiaryImageView.image = image
+            Diary.diaryData.picture = image
         } else {
             print("이미지 선택 실패")
         }

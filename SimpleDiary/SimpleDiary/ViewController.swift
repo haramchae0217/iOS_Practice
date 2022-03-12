@@ -22,6 +22,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
   
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Diary.diaryData.content.isEmpty {
+            diaryTitleLabel.text = "내용없음"
+        } else {
+            diaryTitleLabel.text = Diary.diaryData.content
+        }
+        
+    }
     
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
         guard let addVC = self.storyboard?.instantiateViewController(withIdentifier: "addVC") as? AddDiaryViewController else { return }

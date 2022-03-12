@@ -14,6 +14,7 @@
 		837C4F2727DC3C3100FC46A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 837C4F2627DC3C3100FC46A7 /* Assets.xcassets */; };
 		837C4F2A27DC3C3100FC46A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837C4F2827DC3C3100FC46A7 /* LaunchScreen.storyboard */; };
 		837C4F3227DC3FD500FC46A7 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C4F3127DC3FD500FC46A7 /* AddDiaryViewController.swift */; };
+		837C4F3427DC477C00FC46A7 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C4F3327DC477C00FC46A7 /* Diary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		837C4F2927DC3C3100FC46A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		837C4F2B27DC3C3100FC46A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		837C4F3127DC3FD500FC46A7 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
+		837C4F3327DC477C00FC46A7 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				837C4F2127DC3C3000FC46A7 /* ViewController.swift */,
 				837C4F2327DC3C3000FC46A7 /* Main.storyboard */,
 				837C4F3127DC3FD500FC46A7 /* AddDiaryViewController.swift */,
+				837C4F3327DC477C00FC46A7 /* Diary.swift */,
 				837C4F2627DC3C3100FC46A7 /* Assets.xcassets */,
 				837C4F2827DC3C3100FC46A7 /* LaunchScreen.storyboard */,
 				837C4F2B27DC3C3100FC46A7 /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				837C4F3227DC3FD500FC46A7 /* AddDiaryViewController.swift in Sources */,
+				837C4F3427DC477C00FC46A7 /* Diary.swift in Sources */,
 				837C4F2227DC3C3000FC46A7 /* ViewController.swift in Sources */,
 				837C4F1E27DC3C3000FC46A7 /* AppDelegate.swift in Sources */,
 				837C4F2027DC3C3000FC46A7 /* SceneDelegate.swift in Sources */,

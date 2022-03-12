@@ -14,6 +14,7 @@ class AddDiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if addDiaryContentTextView.text.isEmpty {
             addDiaryContentTextView.text = "내용을 입력해주세요."
             addDiaryContentTextView.textColor = .lightGray
@@ -24,6 +25,26 @@ class AddDiaryViewController: UIViewController {
         title = "Add Diary"
         let rightBarButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(createBarButton))
           self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    func showAlertSheet() {
+        let alertAction = UIAlertController(title: "사진 추가하기", message: "어떤방식으로 추가하시겠습니까?", preferredStyle: .actionSheet)
+        
+        let cameraButton = UIAlertAction(title: "카메라", style: .default) { _ in
+            print("camera on")
+        }
+        let photoLibraryButton = UIAlertAction(title: "사진첩", style: .default) { _ in
+            print("photoLibrary on")
+        }
+//        let cameraButton = UIAlertAction(title: "카메라", style: .default, handler: nil)
+//        let photoLibrary = UIAlertAction(title: "사진첩", style: .default, handler: nil)
+        let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alertAction.addAction(cameraButton)
+        alertAction.addAction(photoLibraryButton)
+        alertAction.addAction(cancelButton)
+        
+        self.present(alertAction, animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -37,7 +58,7 @@ class AddDiaryViewController: UIViewController {
         }
     
     @IBAction func addPictureButton(_ sender: UIButton) {
-        
+        showAlertSheet()
     }
     
 }

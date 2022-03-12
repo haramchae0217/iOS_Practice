@@ -22,7 +22,7 @@ class AddDiaryViewController: UIViewController {
         @objc func createBarButton() {
             //textView에 있는 글씨는 이전화면으로 titleLabel에 대입
             Diary.diaryData.content = addDiaryContentTextView.text
-            
+            Diary.diaryData.date = Date()
             self.navigationController?.popViewController(animated: true)
         }
     

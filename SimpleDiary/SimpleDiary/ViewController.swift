@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         } else {
             diaryTitleLabel.text = Diary.diaryData.content
         }
+        diaryDateLabel.text = "\(Diary.diaryData.date)"
         
     }
     

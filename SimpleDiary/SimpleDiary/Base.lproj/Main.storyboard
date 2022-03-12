@@ -26,6 +26,10 @@
                                             <constraint firstAttribute="width" secondItem="BFX-ie-odA" secondAttribute="height" multiplier="1:1" id="ya1-SK-0oN"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-u2-HDo">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                        <color key="backgroundColor" white="1" alpha="0.29976022480339404" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umZ-Te-x70">
                                         <rect key="frame" x="10" y="10" width="354" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -43,15 +47,19 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vEw-ga-CYf" secondAttribute="trailing" constant="10" id="3Xb-qs-wiP"/>
                                     <constraint firstItem="vEw-ga-CYf" firstAttribute="leading" secondItem="pWB-Zy-RAW" secondAttribute="leading" constant="10" id="8BZ-Id-Moa"/>
+                                    <constraint firstItem="dx9-u2-HDo" firstAttribute="leading" secondItem="pWB-Zy-RAW" secondAttribute="leading" id="G9d-Pd-j5P"/>
                                     <constraint firstItem="umZ-Te-x70" firstAttribute="leading" secondItem="pWB-Zy-RAW" secondAttribute="leading" constant="10" id="Jxc-A0-d4r"/>
                                     <constraint firstItem="umZ-Te-x70" firstAttribute="top" secondItem="pWB-Zy-RAW" secondAttribute="top" constant="10" id="Jxp-nT-klX"/>
                                     <constraint firstAttribute="bottom" secondItem="BFX-ie-odA" secondAttribute="bottom" id="Mbj-H1-KEl"/>
                                     <constraint firstAttribute="width" secondItem="pWB-Zy-RAW" secondAttribute="height" multiplier="1:1" id="RGv-ky-Zfb"/>
+                                    <constraint firstItem="dx9-u2-HDo" firstAttribute="top" secondItem="pWB-Zy-RAW" secondAttribute="top" id="ag2-Qp-ISn"/>
                                     <constraint firstAttribute="trailing" secondItem="BFX-ie-odA" secondAttribute="trailing" id="hDn-YA-Q7F"/>
+                                    <constraint firstAttribute="bottom" secondItem="dx9-u2-HDo" secondAttribute="bottom" id="iVy-qZ-DJM"/>
                                     <constraint firstAttribute="trailing" secondItem="umZ-Te-x70" secondAttribute="trailing" constant="10" id="jiQ-q0-gl4"/>
                                     <constraint firstItem="BFX-ie-odA" firstAttribute="top" secondItem="pWB-Zy-RAW" secondAttribute="top" id="nBC-ik-TMV"/>
                                     <constraint firstAttribute="bottom" secondItem="vEw-ga-CYf" secondAttribute="bottom" constant="10" id="nKW-zl-ctJ"/>
                                     <constraint firstItem="BFX-ie-odA" firstAttribute="leading" secondItem="pWB-Zy-RAW" secondAttribute="leading" id="qLc-vf-ywC"/>
+                                    <constraint firstAttribute="trailing" secondItem="dx9-u2-HDo" secondAttribute="trailing" id="v9F-aF-u9Q"/>
                                 </constraints>
                             </view>
                         </subviews>

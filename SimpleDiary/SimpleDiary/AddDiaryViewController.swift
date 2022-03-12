@@ -12,6 +12,8 @@ class AddDiaryViewController: UIViewController {
     @IBOutlet weak var addDiaryImageView: UIImageView!
     @IBOutlet weak var addDiaryContentTextView: UITextView!
     
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,8 +21,9 @@ class AddDiaryViewController: UIViewController {
             addDiaryContentTextView.text = "내용을 입력해주세요."
             addDiaryContentTextView.textColor = .lightGray
         }
-        addDiaryContentTextView.delegate = self
         
+        addDiaryContentTextView.delegate = self
+        imagePicker.delegate = self
         
         title = "Add Diary"
         let rightBarButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(createBarButton))
@@ -32,9 +35,13 @@ class AddDiaryViewController: UIViewController {
         
         let cameraButton = UIAlertAction(title: "카메라", style: .default) { _ in
             print("camera on")
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
         }
         let photoLibraryButton = UIAlertAction(title: "사진첩", style: .default) { _ in
             print("photoLibrary on")
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
         }
 //        let cameraButton = UIAlertAction(title: "카메라", style: .default, handler: nil)
 //        let photoLibrary = UIAlertAction(title: "사진첩", style: .default, handler: nil)
@@ -76,4 +83,8 @@ extension AddDiaryViewController: UITextViewDelegate {
             textView.textColor = .lightGray
         }
     }
+}
+
+extension AddDiaryViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
 }

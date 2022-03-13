@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         diaryDateLabel.text = "\(Diary.diaryData.date)"
         diaryImageView.image = Diary.diaryData.picture
         
+        
     }
     
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {

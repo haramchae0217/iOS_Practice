@@ -41,16 +41,16 @@
                                 <rect key="frame" x="20" y="159" width="374" height="634"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="5NT-aP-caf">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="634"/>
+                                        <rect key="frame" x="0.0" y="35" width="374" height="564"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkK-cD-frG">
-                                        <rect key="frame" x="20" y="20" width="334" height="20.5"/>
+                                        <rect key="frame" x="20" y="5" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.03.11" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Oy-OV-Xds">
-                                        <rect key="frame" x="20" y="593.5" width="334" height="20.5"/>
+                                        <rect key="frame" x="20" y="608.5" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -58,17 +58,25 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="5NT-aP-caf" firstAttribute="top" secondItem="ffs-Yg-jro" secondAttribute="top" id="GVU-D8-c2h"/>
+                                    <constraint firstItem="5NT-aP-caf" firstAttribute="top" secondItem="ffs-Yg-jro" secondAttribute="top" constant="35" id="GVU-D8-c2h"/>
                                     <constraint firstAttribute="trailing" secondItem="6Oy-OV-Xds" secondAttribute="trailing" constant="20" id="IIJ-vp-72k"/>
                                     <constraint firstItem="6Oy-OV-Xds" firstAttribute="leading" secondItem="ffs-Yg-jro" secondAttribute="leading" constant="20" id="KOh-YY-hle"/>
                                     <constraint firstItem="5NT-aP-caf" firstAttribute="leading" secondItem="ffs-Yg-jro" secondAttribute="leading" id="PqY-64-pRv"/>
                                     <constraint firstItem="lkK-cD-frG" firstAttribute="leading" secondItem="ffs-Yg-jro" secondAttribute="leading" constant="20" id="TnK-wH-H4s"/>
-                                    <constraint firstItem="lkK-cD-frG" firstAttribute="top" secondItem="ffs-Yg-jro" secondAttribute="top" constant="20" id="XIr-2Z-fhK"/>
+                                    <constraint firstItem="lkK-cD-frG" firstAttribute="top" secondItem="ffs-Yg-jro" secondAttribute="top" constant="5" id="XIr-2Z-fhK"/>
                                     <constraint firstAttribute="trailing" secondItem="5NT-aP-caf" secondAttribute="trailing" id="l4v-tA-JDV"/>
                                     <constraint firstAttribute="trailing" secondItem="lkK-cD-frG" secondAttribute="trailing" constant="20" id="mfM-KL-ndK"/>
-                                    <constraint firstAttribute="bottom" secondItem="6Oy-OV-Xds" secondAttribute="bottom" constant="20" id="sDo-HP-bTB"/>
-                                    <constraint firstAttribute="bottom" secondItem="5NT-aP-caf" secondAttribute="bottom" id="zIl-WX-bBa"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Oy-OV-Xds" secondAttribute="bottom" constant="5" id="sDo-HP-bTB"/>
+                                    <constraint firstAttribute="bottom" secondItem="5NT-aP-caf" secondAttribute="bottom" constant="35" id="zIl-WX-bBa"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -314,6 +322,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4b4-Bu-4XX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Su-Lz-Kq0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

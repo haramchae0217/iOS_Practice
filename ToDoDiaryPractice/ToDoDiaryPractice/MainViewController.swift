@@ -17,6 +17,10 @@ class MainViewController: UIViewController {
         mainTableView.dataSource = self
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainTableView.reloadData()
+    }
 
     func showAlertSheet() {
         let alertAction = UIAlertController(title: "글 작성하기", message: "어떤종류를 작성하시겠습니까?", preferredStyle: .actionSheet)
@@ -46,8 +50,13 @@ extension MainViewController: UITableViewDataSource {
         guard let cell = mainTableView.dequeueReusableCell(withIdentifier: "Main", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
         let main = Main.mainData[indexPath.row]
         cell.typeLabel.text = main.type
+        if main.type == "ToDo" {
+            cell.typeLabel.textColor = .blue
+        } else {
+            cell.typeLabel.textColor = .red
+        }
         cell.titleLabel.text = main.title
-        //cell.dateLabel.text = DateFormatter.string(from: main.date)
+        cell.dateLabel.text = DateFormatter.customDateFormatter.toStringFromDate(target: main.date)
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

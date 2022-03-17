@@ -160,6 +160,9 @@
                             <constraint firstItem="cju-Ut-i2h" firstAttribute="trailing" secondItem="i1t-Ab-ggK" secondAttribute="trailing" constant="20" id="jky-T9-6cl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="diaryTitleTextField" destination="i1t-Ab-ggK" id="895-l1-RmO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ito-B0-Ni4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,8 @@ import UIKit
 
 class DiaryViewController: UIViewController {
 
+    @IBOutlet weak var diaryTitleTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,12 @@ class DiaryViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     @objc func createBarButton() {
+        
+        let diaryTitle = diaryTitleTextField.text!
+        
+        let newDiary = Main.init(type: "Diary", title: diaryTitle)
+        Main.mainData.append(newDiary)
+        
         self.navigationController?.popViewController(animated: true)
     }
     

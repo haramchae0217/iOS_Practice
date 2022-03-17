@@ -23,7 +23,9 @@ class ToDoViewController: UIViewController {
     }
     @objc func createBarButton() {
         let toDoTitle = todoTitleTextField.text!
-        Main.mainData.append(Main(type: "ToDo", title: toDoTitle))
+        let newToDo = Main.init(type: "ToDo", title: toDoTitle)
+        
+        Main.mainData.append(newToDo)
         
         self.navigationController?.popViewController(animated: true)
     }

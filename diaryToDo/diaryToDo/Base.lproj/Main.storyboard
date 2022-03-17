@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4b4-Bu-4XX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4b4-Bu-4XX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -139,7 +139,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rwd-v6-t4H">
-                                <rect key="frame" x="20" y="159" width="374" height="629.5"/>
+                                <rect key="frame" x="20" y="159" width="374" height="601.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ToDo" rowHeight="107" id="y3I-Pa-xab" customClass="ToDoTableViewCell" customModule="diaryToDo" customModuleProvider="target">
@@ -202,7 +202,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="0ta-SL-fUA">
-                                <rect key="frame" x="20" y="808.5" width="374" height="24.5"/>
+                                <rect key="frame" x="20" y="768.5" width="374" height="24.5"/>
                                 <subviews>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Ti-rtd">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="4"/>
@@ -219,13 +219,13 @@
                         <viewLayoutGuide key="safeArea" id="VWT-wU-VQx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0ta-SL-fUA" firstAttribute="bottom" secondItem="VWT-wU-VQx" secondAttribute="bottom" constant="20" id="8y3-nE-QJl"/>
+                            <constraint firstItem="0ta-SL-fUA" firstAttribute="bottom" secondItem="VWT-wU-VQx" secondAttribute="bottom" constant="-20" id="8y3-nE-QJl"/>
                             <constraint firstItem="rwd-v6-t4H" firstAttribute="leading" secondItem="VWT-wU-VQx" secondAttribute="leading" constant="20" id="Cbn-GZ-HoL"/>
                             <constraint firstItem="VWT-wU-VQx" firstAttribute="trailing" secondItem="S3b-4f-Lj3" secondAttribute="trailing" constant="50" id="Mvz-FN-ROJ"/>
                             <constraint firstItem="0ta-SL-fUA" firstAttribute="leading" secondItem="VWT-wU-VQx" secondAttribute="leading" constant="20" id="SVz-ao-NlN"/>
                             <constraint firstItem="S3b-4f-Lj3" firstAttribute="leading" secondItem="VWT-wU-VQx" secondAttribute="leading" constant="50" id="YAu-Qj-jvo"/>
                             <constraint firstItem="S3b-4f-Lj3" firstAttribute="top" secondItem="VWT-wU-VQx" secondAttribute="top" constant="20" id="Ywy-nd-ia7"/>
-                            <constraint firstItem="0ta-SL-fUA" firstAttribute="top" secondItem="rwd-v6-t4H" secondAttribute="bottom" constant="20" id="mS4-h8-Ojf"/>
+                            <constraint firstItem="0ta-SL-fUA" firstAttribute="top" secondItem="rwd-v6-t4H" secondAttribute="bottom" constant="8" symbolic="YES" id="mS4-h8-Ojf"/>
                             <constraint firstItem="VWT-wU-VQx" firstAttribute="trailing" secondItem="0ta-SL-fUA" secondAttribute="trailing" constant="20" id="mTd-xZ-wwu"/>
                             <constraint firstItem="rwd-v6-t4H" firstAttribute="top" secondItem="S3b-4f-Lj3" secondAttribute="bottom" constant="20" id="pG2-0x-8iM"/>
                             <constraint firstItem="VWT-wU-VQx" firstAttribute="trailing" secondItem="rwd-v6-t4H" secondAttribute="trailing" constant="20" id="uwq-UO-ftT"/>

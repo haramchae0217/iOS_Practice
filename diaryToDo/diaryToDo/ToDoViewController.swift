@@ -29,6 +29,9 @@ extension ToDoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDo", for: indexPath) as? ToDoTableViewCell else { return UITableViewCell() }
+        let todo = ToDo.ToDoList[indexPath.row]
+        cell.toDoTitleLabel.text = todo.title
+        cell.toDoExpireDateLabel.text = DateFormatter.customDateFormatter.toStringFromDate(target: todo.expireDate)
         
         return cell
     }
@@ -38,6 +41,6 @@ extension ToDoViewController: UITableViewDataSource {
 
 extension ToDoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 80
     }
 }

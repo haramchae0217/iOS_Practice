@@ -22,10 +22,9 @@ class DiaryViewController: UIViewController {
     @objc func createBarButton() {
         
         let diaryTitle = diaryTitleTextField.text!
-        
         let newDiary = Main.init(type: "Diary", title: diaryTitle)
-        Main.mainData.append(newDiary)
         
+        Main.mainData.append(newDiary)
         self.navigationController?.popViewController(animated: true)
     }
     

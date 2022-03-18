@@ -14,3 +14,5 @@ struct Main {
     
     static var mainData: [Main] = []
 }
+// type을 열거형으로
+// main 이름 수정

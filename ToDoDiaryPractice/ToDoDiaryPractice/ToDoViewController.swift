@@ -10,6 +10,7 @@ import UIKit
 class ToDoViewController: UIViewController {
 
     @IBOutlet weak var todoTitleTextField: UITextField!
+    // 이름이 너무 김 최대한 간결하게 줄여보자 단, 같은 outlet요소가 여러개일 경우는 길어질 수 밖에 없음.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,17 +19,17 @@ class ToDoViewController: UIViewController {
         
         let rightBarButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(createBarButton))
         self.navigationItem.rightBarButtonItem = rightBarButton
-        
-        
     }
+    
     @objc func createBarButton() {
         let toDoTitle = todoTitleTextField.text!
         let newToDo = Main.init(type: "ToDo", title: toDoTitle)
+        // init 쓰지말고 새로운 인스턴스를 만들어 사용하기.
         
         Main.mainData.append(newToDo)
-        
         self.navigationController?.popViewController(animated: true)
+        // 버튼 네이밍 다시.
     }
     
-
 }
+// 다이어리 VC도 똑같이 네이밍

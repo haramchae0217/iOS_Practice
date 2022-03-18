@@ -17,11 +17,11 @@ extension DateFormatter {
         df.timeStyle = .medium
         return df
     }()
+    
     func toDateFromString(target: String) -> Date {
         self.dateFormat = "yyyy/MM/dd"
         return self.date(from: target)!
     }
-    
     
     // 날짜 -> 문자열
     func toStringFromDate(target: Date) -> String {
@@ -40,4 +40,4 @@ extension DateFormatter {
     }
 
 }
-
+// ~to~ 이런 느낌으로 네이밍

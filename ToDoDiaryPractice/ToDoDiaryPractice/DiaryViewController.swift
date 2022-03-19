@@ -16,15 +16,14 @@ class DiaryViewController: UIViewController {
 
         title = "Diary"
         
-        let rightBarButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(createBarButton))
-        self.navigationItem.rightBarButtonItem = rightBarButton
+        let doneRightBarButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(addDiaryBarButton))
+        self.navigationItem.rightBarButtonItem = doneRightBarButton
     }
-    @objc func createBarButton() {
-        
+    @objc func addDiaryBarButton() {
         let diaryTitle = diaryTitleTextField.text!
-        let newDiary = Main.init(type: "Diary", title: diaryTitle)
+        let newDiary = Item(type: "Diary", title: diaryTitle)
         
-        Main.mainData.append(newDiary)
+        Item.itemData.append(newDiary)
         self.navigationController?.popViewController(animated: true)
     }
     

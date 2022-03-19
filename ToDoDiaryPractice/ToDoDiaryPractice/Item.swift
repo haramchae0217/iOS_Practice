@@ -12,7 +12,7 @@ struct Item {
     var title: String
     var date: Date = Date()
     
-    static var itmeData: [Item] = []
+    static var itemData: [Item] = []
 }
 // type을 열거형으로
 // main 이름 수정

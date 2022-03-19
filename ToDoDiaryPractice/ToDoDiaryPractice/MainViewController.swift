@@ -11,6 +11,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var mainTableView: UITableView!
     
+    let heightForRow: CGFloat = 80
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainTableView.delegate = self
@@ -51,31 +53,38 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = mainTableView.dequeueReusableCell(withIdentifier: "Main", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
-        let main = Main.mainData[indexPath.row]
-        cell.typeLabel.text = main.type
+        guard let cell = mainTableView.dequeueReusableCell(withIdentifier: "Main", for: indexPath) as? ItemTableViewCell else { return UITableViewCell() }
+        let item = Item.itemData[indexPath.row]
+        cell.typeLabel.text = item.type
         
-        if main.type == "ToDo" {
+        if item.type == "ToDo" {
             cell.typeLabel.textColor = .blue
         } else {
             cell.typeLabel.textColor = .red
         }
         
-        cell.titleLabel.text = main.title
-        cell.dateLabel.text = DateFormatter.customDateFormatter.toStringFromDate(target: main.date)
+        cell.titleLabel.text = item.title
+        cell.dateLabel.text = DateFormatter.customDateFormatter.toStringFromDate(target: item.date)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Main.mainData.count
+        return Item.itemData.count
     }
     // 삭제 구현하기
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            Item.itemData.remove(at: indexPath.row)
+            mainTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
 }
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return heightForRow
         // return값을 상수로 지정해서 사용해보기.
     }
 }

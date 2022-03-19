@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Main {
+struct Item {
     var type: String
     var title: String
     var date: Date = Date()
     
-    static var mainData: [Main] = []
+    static var itmeData: [Item] = []
 }
 // type을 열거형으로
 // main 이름 수정

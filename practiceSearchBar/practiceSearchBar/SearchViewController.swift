@@ -12,6 +12,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var alienList: [String] = ["breqrains", "ghivval", "krel", "throngraks", "hummur", "elgan", "one", "dalmi", "comad", "bognaer", "equd", "trexeid", "thraerex", "vuuczils", "henairs"]
     var filteredList: [String] = []
+    //var searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,15 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         
     // searchController
-        let searchController = UISearchController()
-        searchController.delegate = self
-        tableView.tableHeaderView = searchController.searchBar
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        //controller.delegate = self
+        searchController.searchBar.delegate = self
+        //tableView.tableHeaderView = controller.searchBar
+        navigationItem.searchController = searchController
+        
+        //searchController = controller
     }
-
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -55,6 +60,23 @@ extension SearchViewController: UITableViewDelegate {
     }
 }
 
-extension SearchViewController: UISearchControllerDelegate {
+extension SearchViewController: UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text{
+            print("검색어 : ",text)
+            self.filteredList = self.alienList.filter{ $0.lowercased().contains(text)}
+            print("필터링 : ",filteredList)
+        } else {
+            print("text 존재 안함.")
+        }
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        tableView.reloadData()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredList = []
+        tableView.reloadData()
+    }
     
 }
+

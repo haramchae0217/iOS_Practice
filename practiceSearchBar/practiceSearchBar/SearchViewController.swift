@@ -64,7 +64,7 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        if let text = searchController.searchBar.text{
+        if let text = searchController.searchBar.text {
             print("검색어 : ",text)
             self.filteredList = self.alienList.filter{ $0.lowercased().contains(text)}
             print("필터링 : ",filteredList)

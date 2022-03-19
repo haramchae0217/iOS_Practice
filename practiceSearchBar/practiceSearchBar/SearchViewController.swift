@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "이름 검색"
+        filteredList = alienList
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -27,6 +28,8 @@ class SearchViewController: UIViewController {
         //controller.delegate = self
         searchController.searchBar.delegate = self
         //tableView.tableHeaderView = controller.searchBar
+        searchController.searchBar.placeholder = "이름을 입력하세요."
+        navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
         
         //searchController = controller
@@ -35,21 +38,20 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if filteredList.isEmpty {
-            return alienList.count
-        } else {
             return filteredList.count
-        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
-        if filteredList.isEmpty{
-            cell.searchLabel.text = alienList[indexPath.row]
-        } else {
+//        if filteredList.isEmpty{
+//            cell.searchLabel.text = alienList[indexPath.row]
+//        } else {
+//            cell.searchLabel.text = filteredList[indexPath.row]
+//        }
+        if !filteredList.isEmpty {
             cell.searchLabel.text = filteredList[indexPath.row]
         }
-        
         return cell
     }
 }
@@ -74,7 +76,7 @@ extension SearchViewController: UISearchControllerDelegate, UISearchResultsUpdat
         tableView.reloadData()
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        filteredList = []
+        filteredList = alienList
         tableView.reloadData()
     }
     

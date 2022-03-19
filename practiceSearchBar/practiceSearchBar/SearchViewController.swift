@@ -10,7 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var alienList: [String] = ["breqrains", "ghivval", "krel", "throngraks", "hummur", "elgan", "one", "dalmi", "comad", "bognaer", "equd", "trexeid", "thraerex", "vuuczils", "henairs"]
+    let alienList: [String] = ["breqrains", "ghivval", "krel", "throngraks", "hummur", "elgan", "one", "dalmi", "comad", "bognaer", "equd", "trexeid", "thraerex", "vuuczils", "henairs"]
     var filteredList: [String] = []
     //var searchController = UISearchController()
     

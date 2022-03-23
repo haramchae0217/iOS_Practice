@@ -14,6 +14,9 @@ class DiaryViewController: UIViewController {
         
     }
     
-
+    @IBAction func calendarButton(_ sender: UIBarButtonItem) {
+        
+    }
+    
 }
 

@@ -11,8 +11,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     @IBAction func searchBarButtonClicked(_ sender: UIBarButtonItem) {

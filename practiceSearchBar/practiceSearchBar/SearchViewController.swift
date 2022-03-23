@@ -39,7 +39,6 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return filteredList.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,6 +78,5 @@ extension SearchViewController: UISearchControllerDelegate, UISearchResultsUpdat
         filteredList = alienList
         tableView.reloadData()
     }
-    
 }
 

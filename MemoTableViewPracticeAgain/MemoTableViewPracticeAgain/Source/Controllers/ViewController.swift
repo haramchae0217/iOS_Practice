@@ -71,7 +71,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            MyDB.memoList.remove(at: indexPath.row)
+            filteredList.remove(at: indexPath.row)
             // 실제 배열 안의 값을 지움
             tableView.deleteRows(at: [indexPath], with: .fade)
             // 사라지는 방향
@@ -105,7 +105,7 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate {
             //filteredList = MyDB.memoList.filter{ $0.memoTitle.map { String ($0) }.contains(searchText) }
             filteredList = MyDB.memoList.filter{ $0.memoTitle.lowercased().map { String ($0) }.contains(searchText) }
             //filteredList = MyDB.contactList.filter{ $0.name.map { String($0) }.contains(searchText) }
-            print(filteredList)
+            
         }
     }
     

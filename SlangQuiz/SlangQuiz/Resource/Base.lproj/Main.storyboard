@@ -55,7 +55,13 @@
                             <constraint firstItem="Bd8-5q-v9P" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DrI-2Z-Ren"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ax6-hC-iZ0"/>
+                    <navigationItem key="navigationItem" id="Ax6-hC-iZ0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qkc-vq-M0Z">
+                            <connections>
+                                <action selector="rightBarButton:" destination="BYZ-38-t0r" id="siI-yr-jNv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fullNameLabel" destination="VDa-Lf-JJF" id="6Gc-7I-MgA"/>
                         <outlet property="shortNameLabel" destination="moy-NK-mpp" id="05q-YN-twj"/>
@@ -64,6 +70,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
+        </scene>
+        <!--Add Slang View Controller-->
+        <scene sceneID="IHm-49-xn4">
+            <objects>
+                <viewController storyboardIdentifier="addVC" id="STE-RY-VrB" customClass="AddSlangViewController" customModule="SlangQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CHy-vk-oWE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신조어를 입력하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoz-Yr-NdB">
+                                <rect key="frame" x="20" y="64" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="신조어를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vq2-dZ-2aI">
+                                <rect key="frame" x="20" y="108" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뜻을 입력하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7j3-ey-WZn">
+                                <rect key="frame" x="20" y="182" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="뜻을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqN-xx-MuK">
+                                <rect key="frame" x="20" y="226" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RhE-VU-jAp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RhE-VU-jAp" firstAttribute="trailing" secondItem="iqN-xx-MuK" secondAttribute="trailing" constant="20" id="3Sm-oQ-LNm"/>
+                            <constraint firstItem="iqN-xx-MuK" firstAttribute="leading" secondItem="RhE-VU-jAp" secondAttribute="leading" constant="20" id="ER3-QG-PFM"/>
+                            <constraint firstItem="7j3-ey-WZn" firstAttribute="top" secondItem="vq2-dZ-2aI" secondAttribute="bottom" constant="40" id="OC8-91-vXP"/>
+                            <constraint firstItem="vq2-dZ-2aI" firstAttribute="top" secondItem="qoz-Yr-NdB" secondAttribute="bottom" constant="20" id="Srs-mg-pKp"/>
+                            <constraint firstItem="iqN-xx-MuK" firstAttribute="top" secondItem="7j3-ey-WZn" secondAttribute="bottom" constant="20" id="Wzt-HZ-EPi"/>
+                            <constraint firstItem="qoz-Yr-NdB" firstAttribute="top" secondItem="RhE-VU-jAp" secondAttribute="top" constant="20" id="Zbo-71-TYi"/>
+                            <constraint firstItem="RhE-VU-jAp" firstAttribute="trailing" secondItem="vq2-dZ-2aI" secondAttribute="trailing" constant="20" id="aOI-CD-ot5"/>
+                            <constraint firstItem="7j3-ey-WZn" firstAttribute="leading" secondItem="RhE-VU-jAp" secondAttribute="leading" constant="20" id="cQJ-Ia-xGQ"/>
+                            <constraint firstItem="RhE-VU-jAp" firstAttribute="trailing" secondItem="qoz-Yr-NdB" secondAttribute="trailing" constant="20" id="d8h-zl-BFg"/>
+                            <constraint firstItem="vq2-dZ-2aI" firstAttribute="leading" secondItem="RhE-VU-jAp" secondAttribute="leading" constant="20" id="eTb-45-Sf6"/>
+                            <constraint firstItem="RhE-VU-jAp" firstAttribute="trailing" secondItem="7j3-ey-WZn" secondAttribute="trailing" constant="20" id="htx-HC-Hvu"/>
+                            <constraint firstItem="qoz-Yr-NdB" firstAttribute="leading" secondItem="RhE-VU-jAp" secondAttribute="leading" constant="20" id="sji-3H-Tpr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fullTextField" destination="iqN-xx-MuK" id="KCo-Vz-gSq"/>
+                        <outlet property="smallTextField" destination="vq2-dZ-2aI" id="h7G-ui-d6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ol-rZ-Kdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1865" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cTv-ok-X22">

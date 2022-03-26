@@ -11,6 +11,10 @@ import UIKit
  2. 검색어와 완전히 일치하는 항목 거르기
     - 완전히 일치하는 단어가 없을 시에는 "혹시 찾으시는 단어가 이중에 있나요?" 라는 문구와 함께 해당 검색어가 포함된 slang 목록(short name)을 띄워준다.
  3. 검색어와 일치하는 항목을 shortNameLabel, fullNameLabel에 출력하기
+ 4. AddVC추가하기
+ 5. BarButtonItem 구현하기
+ 6. AddVC - textField 두개로 신조어와 뜻 받아오기
+ 7. 검색했을 때 뜨도록 구현하기.
  */
 
 class ViewController: UIViewController {
@@ -40,7 +44,9 @@ class ViewController: UIViewController {
     }
     
     // MARK: Action
-
+    @IBAction func rightBarButton(_ sender: UIBarButtonItem) {
+    }
+    
 
 }
 

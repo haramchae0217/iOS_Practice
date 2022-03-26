@@ -15,6 +15,7 @@
 		836FCDF227ECA4E200FA5C46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836FCDF027ECA4E200FA5C46 /* LaunchScreen.storyboard */; };
 		836FCDFA27ECA50000FA5C46 /* Slang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836FCDF927ECA50000FA5C46 /* Slang.swift */; };
 		836FCE0027ECA82300FA5C46 /* MyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836FCDFF27ECA82300FA5C46 /* MyDB.swift */; };
+		83CD841B27EE9DA30031D34C /* AddSlangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CD841A27EE9DA30031D34C /* AddSlangViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		836FCDF327ECA4E200FA5C46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		836FCDF927ECA50000FA5C46 /* Slang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slang.swift; sourceTree = "<group>"; };
 		836FCDFF27ECA82300FA5C46 /* MyDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDB.swift; sourceTree = "<group>"; };
+		83CD841A27EE9DA30031D34C /* AddSlangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSlangViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		836FCDFE27ECA7F500FA5C46 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				83CD841A27EE9DA30031D34C /* AddSlangViewController.swift */,
 				836FCDE927ECA4E000FA5C46 /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -178,6 +181,7 @@
 			files = (
 				836FCDEA27ECA4E000FA5C46 /* ViewController.swift in Sources */,
 				836FCDE627ECA4E000FA5C46 /* AppDelegate.swift in Sources */,
+				83CD841B27EE9DA30031D34C /* AddSlangViewController.swift in Sources */,
 				836FCDE827ECA4E000FA5C46 /* SceneDelegate.swift in Sources */,
 				836FCDFA27ECA50000FA5C46 /* Slang.swift in Sources */,
 				836FCE0027ECA82300FA5C46 /* MyDB.swift in Sources */,

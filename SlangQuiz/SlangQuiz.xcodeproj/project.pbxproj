@@ -102,8 +102,8 @@
 		836FCDFE27ECA7F500FA5C46 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				83CD841A27EE9DA30031D34C /* AddSlangViewController.swift */,
 				836FCDE927ECA4E000FA5C46 /* ViewController.swift */,
+				83CD841A27EE9DA30031D34C /* AddSlangViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

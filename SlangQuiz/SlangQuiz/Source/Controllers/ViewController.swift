@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     
     // MARK: Action
     @IBAction func rightBarButton(_ sender: UIBarButtonItem) {
+        guard let addVC = storyboard?.instantiateViewController(withIdentifier: AddSlangViewController.identifier) as? AddSlangViewController else { return }
+        self.navigationController?.pushViewController(addVC, animated: true)
     }
     
 

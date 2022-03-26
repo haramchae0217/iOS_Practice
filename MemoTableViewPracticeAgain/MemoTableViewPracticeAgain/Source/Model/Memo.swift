@@ -10,5 +10,4 @@ import Foundation
 struct Memo {
     var memoTitle: String
     var memoDate: String    
-    static var memoList: [Memo] = []
 }

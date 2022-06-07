@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! // tableView와 연동 후 설정 가능
     
     // MARK: Proterties
-    //var sections: [String] = ["섹션1","섹션2","섹션3"]
+    var sections: [String] = ["섹션1","섹션2","섹션3"]
     var datas: [String] = ["로우1","로우2","로우3","로우4","로우5"]
     
     override func viewDidLoad() {
@@ -27,13 +27,13 @@ class ViewController: UIViewController {
 
 // MARK: extension
 extension ViewController: UITableViewDataSource{
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return sections.count
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return sections[section]
-//    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count

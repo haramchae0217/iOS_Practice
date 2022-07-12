@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hmm-91-NY0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hash Tag View Controller-->
+        <scene sceneID="uXU-tH-6wH">
+            <objects>
+                <viewController id="FGL-XX-W2i" customClass="HashTagViewController" customModule="SearchHashTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BJp-hl-n9D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lNA-0e-p8d">
+                                <rect key="frame" x="20" y="88" width="374" height="38"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0IM-Je-6Ye">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPi-6q-zUw">
+                                        <rect key="frame" x="315" y="0.0" width="59" height="38"/>
+                                        <color key="backgroundColor" red="0.042228485257372099" green="0.28973080413510099" blue="0.00013927357634774685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="추가">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addHashTagButton:" destination="FGL-XX-W2i" eventType="touchUpInside" id="H6u-jP-l6T"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="해시태그 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kru-2T-QP3">
+                                <rect key="frame" x="20" y="136" width="374" height="706"/>
+                                <color key="backgroundColor" red="0.50154617359999998" green="0.97251266179999996" blue="0.51535710960000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I5s-NV-Oqd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I5s-NV-Oqd" firstAttribute="trailing" secondItem="Kru-2T-QP3" secondAttribute="trailing" constant="20" id="41u-XT-4bI"/>
+                            <constraint firstItem="I5s-NV-Oqd" firstAttribute="trailing" secondItem="lNA-0e-p8d" secondAttribute="trailing" constant="20" id="AZp-ke-00R"/>
+                            <constraint firstItem="Kru-2T-QP3" firstAttribute="top" secondItem="lNA-0e-p8d" secondAttribute="bottom" constant="10" id="HwN-8D-znY"/>
+                            <constraint firstItem="lNA-0e-p8d" firstAttribute="leading" secondItem="I5s-NV-Oqd" secondAttribute="leading" constant="20" id="TwC-4O-xtr"/>
+                            <constraint firstItem="I5s-NV-Oqd" firstAttribute="bottom" secondItem="Kru-2T-QP3" secondAttribute="bottom" constant="20" id="U0f-hY-XHr"/>
+                            <constraint firstItem="lNA-0e-p8d" firstAttribute="top" secondItem="I5s-NV-Oqd" secondAttribute="top" id="ew4-mA-gDv"/>
+                            <constraint firstItem="Kru-2T-QP3" firstAttribute="leading" secondItem="I5s-NV-Oqd" secondAttribute="leading" constant="20" id="fuS-8n-eyD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y1Y-0L-vXO">
+                        <barButtonItem key="rightBarButtonItem" title="검색" id="FkA-gh-5EH">
+                            <connections>
+                                <action selector="searchHashTagButton:" destination="FGL-XX-W2i" id="tYT-X3-92d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="hashTagListLabel" destination="Kru-2T-QP3" id="Nlb-SZ-mJs"/>
+                        <outlet property="hashTagTextField" destination="0IM-Je-6Ye" id="g5v-6K-EXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYD-H5-R6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123.1884057971015" y="102.45535714285714"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SearchVC" id="BYZ-38-t0r" customClass="SearchViewController" customModule="SearchHashTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IsB-td-GTO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색된 해시태그" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGc-f0-WhS">
+                                <rect key="frame" x="20" y="105" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="해시태그 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw5-3C-P8U">
+                                <rect key="frame" x="20" y="139" width="374" height="703"/>
+                                <color key="backgroundColor" red="0.50154617359999998" green="0.97251266179999996" blue="0.51535710960000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pw5-3C-P8U" secondAttribute="trailing" constant="20" id="5AS-Rf-sQT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lGc-f0-WhS" secondAttribute="trailing" constant="20" id="6i6-uc-iOy"/>
+                            <constraint firstItem="lGc-f0-WhS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="94K-mB-GDL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IsB-td-GTO" secondAttribute="trailing" id="JOK-2i-SuT"/>
+                            <constraint firstItem="Pw5-3C-P8U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QCF-QE-R1M"/>
+                            <constraint firstItem="IsB-td-GTO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bFv-EJ-j9z"/>
+                            <constraint firstItem="Pw5-3C-P8U" firstAttribute="top" secondItem="lGc-f0-WhS" secondAttribute="bottom" constant="10" id="eyn-wS-iBP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="IsB-td-GTO" secondAttribute="top" id="hqn-S2-YX4"/>
+                            <constraint firstItem="lGc-f0-WhS" firstAttribute="top" secondItem="IsB-td-GTO" secondAttribute="bottom" constant="10" id="nTN-kp-dm0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pw5-3C-P8U" secondAttribute="bottom" constant="20" id="uiM-nz-Wnq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VZ5-EK-uPN"/>
+                    <connections>
+                        <outlet property="hashTagListLabel" destination="Pw5-3C-P8U" id="Dql-kB-XD3"/>
+                        <outlet property="searchBar" destination="IsB-td-GTO" id="Ekq-z4-Zp7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="102.45535714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HNq-Eg-iPI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hmm-91-NY0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ue5-w9-F56">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FGL-XX-W2i" kind="relationship" relationship="rootViewController" id="v5V-vK-uAp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JTs-xf-d9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211.59420289855075" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

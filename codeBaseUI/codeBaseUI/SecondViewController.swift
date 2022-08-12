@@ -8,8 +8,8 @@
 import UIKit
 
 /*
- 1. 초록버튼 - 텍스트 필드에 입력한 내용이 얼럿으로 뜨도록 구현
- 2. 빨간버튼 - 텍스트 필드가 비워지게 구현
+ 1. 초록버튼 - 텍스트 필드에 입력한 내용이 얼럿으로 뜨도록 구현 (0)
+ 2. 빨간버튼 - 텍스트 필드가 비워지게 구현 (0)
  */
 
 class SecondViewController: UIViewController {
@@ -62,6 +62,9 @@ class SecondViewController: UIViewController {
         addSubViews()
         setConstraints()
         
+        firstButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
+        secondButton.addTarget(self, action: #selector(cleanTextField), for: .touchUpInside)
+        
     }
     
     func addSubViews() {
@@ -89,12 +92,17 @@ class SecondViewController: UIViewController {
         verticalStackView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
         verticalStackView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 50).isActive = true
         verticalStackView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        
-        // firstButton
-//        firstButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        
-        // secondButton
-//        secondButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+    }
+    
+    @objc func showAlert() {
+        let alert = UIAlertController(title: "⚠️", message: textField.text, preferredStyle: .alert)
+        let doneButton = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alert.addAction(doneButton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func cleanTextField() {
+        textField.text = ""
     }
 
 }

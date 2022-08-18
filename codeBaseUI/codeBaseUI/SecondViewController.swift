@@ -96,9 +96,9 @@ class SecondViewController: UIViewController {
     
     @objc func showAlert() {
         let alert = UIAlertController(title: "⚠️", message: textField.text, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        let doneButton = UIAlertAction(title: "확인", style: .cancel)
         alert.addAction(doneButton)
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true)
     }
     
     @objc func cleanTextField() {

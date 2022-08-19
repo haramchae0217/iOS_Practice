@@ -45,11 +45,33 @@ import UIKit
 */
 
 // 백그라운드에서 순서대로 하는경우는 없음.
+
 DispatchQueue.global().async {
-    print(1)
-    
-    DispatchQueue.main.async {
-        print(2)
+    for i in 1...5 {
+        print(i)
     }
+    print("global ok")
+
+    DispatchQueue.main.async {
+        for i in 6...10 {
+            print(i)
+        }
+        print("main ok")
+    }
+    print("all ok")
 }
 
+DispatchQueue.main.async {
+    for i in 11...15 {
+        print(i)
+    }
+    print("main ok")
+    
+    DispatchQueue.global().async {
+        for i in 16...20 {
+            print(i)
+        }
+        print("global ok")
+    }
+    print("all ok")
+}

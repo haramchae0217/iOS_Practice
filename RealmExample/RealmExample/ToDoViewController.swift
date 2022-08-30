@@ -13,11 +13,11 @@ class ToDoViewController: UIViewController {
     @IBOutlet weak var todoTableView: UITableView!
     
     let localRealm = try! Realm()
-    var todoList: [ToDo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addUser()
         configureTableView()
     }
     
@@ -32,13 +32,31 @@ class ToDoViewController: UIViewController {
         todoTableView.delegate = self
     }
     
-    func getToDo() {
-        let todo = localRealm.objects(ToDo.self)
+    let todo1 = ToDo(title: "todo1", desc: "test todo1")
+    let todo2 = ToDo(title: "todo2", desc: "test todo2")
+    let todo3 = ToDo(title: "todo3", desc: "test todo3")
+    
+    let idCard1 = IDCard(idNumber: "0001")
+    let idCard2 = IDCard(idNumber: "0002")
+    let idCard3 = IDCard(idNumber: "0003")
+    
+    func addUser() {
+        let user1 = User(value: ["id" : 1, "name" : "user1", "idCard" : idCard1])
+        user1.todos.append(todo1)
         
-        for item in todo {
-            todoList.append(item)
+//        let user2 = User(id: 2, name: "user2")
+//        user2.todos.append(todo2)
+//        user2.idCard = idCard2
+//
+//        let user3 = User()
+//        user3.id = 3
+//        user3.name = "user3"
+//        user3.todos.append(objectsIn: [todo1, todo2, todo3])
+//        user3.idCard = idCard3
+        
+        try! localRealm.write {
+            localRealm.add([user1])
         }
-        
     }
 
     @IBAction func addToDoButton(_ sender: UIBarButtonItem) {
@@ -62,13 +80,12 @@ extension ToDoViewController: UITableViewDataSource {
         let todo = localRealm.objects(ToDo.self)
         
         cell.todoTitleLabel.text = todo[indexPath.row].title
-        cell.todoEndDateLabel.text = "만료일 : \(todo[indexPath.row].endDate)"
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return
+        return 0
     }
 }

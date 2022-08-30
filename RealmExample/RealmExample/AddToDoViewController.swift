@@ -30,10 +30,10 @@ class AddToDoViewController: UIViewController {
     
     @objc func doneButtonClicked() {
         let title = titleTextField.text!
-        let memo = memoTextField.text!
+        let desc = memoTextField.text!
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
-        let todo = ToDo(title: title, memo: memo, startDate: startDate, endDate: endDate)
+        let todo = ToDo(title: title, desc: desc)
         
         try! localRealm.write {
             localRealm.add(todo)

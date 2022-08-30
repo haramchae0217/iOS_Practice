@@ -9,17 +9,24 @@ import Foundation
 import RealmSwift
 
 class ToDo: Object {
-    @Persisted(primaryKey: true) var id: ObjectId
-    @Persisted var title: String
-    @Persisted var memo: String
-    @Persisted var startDate: Date
-    @Persisted var endDate: Date
+    @objc dynamic var title: String = ""
+    @objc dynamic var desc: String = ""
+    let ofUser = LinkingObjects(fromType: User.self, property: "todos")
     
-    convenience init(title: String, memo: String, startDate: Date, endDate: Date) {
+    convenience init(title: String, desc: String) {
         self.init()
         self.title = title
-        self.memo = memo
-        self.startDate = startDate
-        self.endDate = endDate
+        self.desc = desc
+    }
+}
+
+class IDCard: Object {
+    @objc dynamic var idNumber: String = ""
+    @objc dynamic var expiryDate: Date = Date.distantFuture
+    let ofUser = LinkingObjects(fromType: User.self, property: "idCard")
+    
+    convenience init(idNumber: String) {
+        self.init()
+        self.idNumber = idNumber
     }
 }

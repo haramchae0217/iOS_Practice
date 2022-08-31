@@ -20,8 +20,9 @@
 		8313331A28BB925800FFEF73 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313331928BB925800FFEF73 /* ToDoTableViewCell.swift */; };
 		8313331C28BB94EE00FFEF73 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313331B28BB94EE00FFEF73 /* AddToDoViewController.swift */; };
 		8313331E28BB9AF700FFEF73 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8313331D28BB9AF700FFEF73 /* ToDo.swift */; };
-		83CB2A2728BCB18A009910F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB2A2628BCB18A009910F9 /* User.swift */; };
-		83CB2A2928BCB3C9009910F9 /* IDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB2A2828BCB3C9009910F9 /* IDCard.swift */; };
+		834A2DE028BF3EFA006A6A19 /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A2DDF28BF3EFA006A6A19 /* RealmViewController.swift */; };
+		834A2DE228BF3F0C006A6A19 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A2DE128BF3F0C006A6A19 /* RealmModel.swift */; };
+		834A2DE528BF3FED006A6A19 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A2DE428BF3FED006A6A19 /* ShoppingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +39,9 @@
 		8313331928BB925800FFEF73 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		8313331B28BB94EE00FFEF73 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		8313331D28BB9AF700FFEF73 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
-		83CB2A2628BCB18A009910F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		83CB2A2828BCB3C9009910F9 /* IDCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCard.swift; sourceTree = "<group>"; };
+		834A2DDF28BF3EFA006A6A19 /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
+		834A2DE128BF3F0C006A6A19 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		834A2DE428BF3FED006A6A19 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,22 +76,39 @@
 		831332F628BB2E5D00FFEF73 /* RealmExample */ = {
 			isa = PBXGroup;
 			children = (
+				83EE45FB28BF80A300238231 /* Realm_ToDo_Ex */,
+				834A2DE328BF3F14006A6A19 /* Realm_array_Ex */,
 				831332F728BB2E5D00FFEF73 /* AppDelegate.swift */,
 				831332F928BB2E5D00FFEF73 /* SceneDelegate.swift */,
 				831332FB28BB2E5D00FFEF73 /* ViewController.swift */,
 				8313331028BB32CB00FFEF73 /* Person.swift */,
-				8313331728BB90A100FFEF73 /* ToDoViewController.swift */,
-				8313331B28BB94EE00FFEF73 /* AddToDoViewController.swift */,
-				8313331D28BB9AF700FFEF73 /* ToDo.swift */,
-				83CB2A2828BCB3C9009910F9 /* IDCard.swift */,
-				83CB2A2628BCB18A009910F9 /* User.swift */,
-				8313331928BB925800FFEF73 /* ToDoTableViewCell.swift */,
 				831332FD28BB2E5D00FFEF73 /* Main.storyboard */,
 				8313330028BB2E5F00FFEF73 /* Assets.xcassets */,
 				8313330228BB2E5F00FFEF73 /* LaunchScreen.storyboard */,
 				8313330528BB2E5F00FFEF73 /* Info.plist */,
 			);
 			path = RealmExample;
+			sourceTree = "<group>";
+		};
+		834A2DE328BF3F14006A6A19 /* Realm_array_Ex */ = {
+			isa = PBXGroup;
+			children = (
+				834A2DDF28BF3EFA006A6A19 /* RealmViewController.swift */,
+				834A2DE428BF3FED006A6A19 /* ShoppingTableViewCell.swift */,
+				834A2DE128BF3F0C006A6A19 /* RealmModel.swift */,
+			);
+			path = Realm_array_Ex;
+			sourceTree = "<group>";
+		};
+		83EE45FB28BF80A300238231 /* Realm_ToDo_Ex */ = {
+			isa = PBXGroup;
+			children = (
+				8313331728BB90A100FFEF73 /* ToDoViewController.swift */,
+				8313331B28BB94EE00FFEF73 /* AddToDoViewController.swift */,
+				8313331928BB925800FFEF73 /* ToDoTableViewCell.swift */,
+				8313331D28BB9AF700FFEF73 /* ToDo.swift */,
+			);
+			path = Realm_ToDo_Ex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,12 +190,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8313331828BB90A100FFEF73 /* ToDoViewController.swift in Sources */,
+				834A2DE528BF3FED006A6A19 /* ShoppingTableViewCell.swift in Sources */,
+				834A2DE228BF3F0C006A6A19 /* RealmModel.swift in Sources */,
+				834A2DE028BF3EFA006A6A19 /* RealmViewController.swift in Sources */,
 				831332FC28BB2E5D00FFEF73 /* ViewController.swift in Sources */,
 				831332F828BB2E5D00FFEF73 /* AppDelegate.swift in Sources */,
 				8313331E28BB9AF700FFEF73 /* ToDo.swift in Sources */,
 				8313331A28BB925800FFEF73 /* ToDoTableViewCell.swift in Sources */,
-				83CB2A2728BCB18A009910F9 /* User.swift in Sources */,
-				83CB2A2928BCB3C9009910F9 /* IDCard.swift in Sources */,
 				8313331C28BB94EE00FFEF73 /* AddToDoViewController.swift in Sources */,
 				8313331128BB32CB00FFEF73 /* Person.swift in Sources */,
 				831332FA28BB2E5D00FFEF73 /* SceneDelegate.swift in Sources */,
@@ -403,8 +423,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
+				kind = exactVersion;
+				version = 10.28.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

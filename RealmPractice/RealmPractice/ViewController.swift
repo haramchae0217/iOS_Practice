@@ -29,15 +29,15 @@ class ViewController: UIViewController {
         
         if list.count == 0 {
             dataListLabel.text = "DB가 비어있습니다."
+        } else {
+            for item in list {
+                dataListLabel.text! += "이름 : \(item.name), 나이 : \(item.age) \n"
+            }
+            
+            let filterAge = 25
+            let person = localRealm.objects(Person.self).filter("age > \(filterAge)")
+            print(person.count)
         }
-        
-        for item in list {
-            dataListLabel.text! += "이름 : \(item.name), 나이 : \(item.age) \n"
-        }
-        
-        let filterAge = 25
-        let person = localRealm.objects(Person.self).filter("age > \(filterAge)")
-        print(person.count)
     }
     
     @IBAction func createDataButton(_ sender: UIButton) {

@@ -12,11 +12,6 @@ class ToDo: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var title: String
     @Persisted var descList: List<String>
- 
-    func getData() -> [ToDo] {
-        let localRealm = try! Realm()
-        return localRealm.objects(ToDo.self).map { $0 }
-    }
     
     convenience init(title: String, descList: List<String>) {
         self.init()

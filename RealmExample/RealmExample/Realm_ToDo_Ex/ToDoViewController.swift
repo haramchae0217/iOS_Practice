@@ -20,12 +20,12 @@ class ToDoViewController: UIViewController {
 
         findRealmLocation()
         configureTableView()
-        todoList = getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        todoList = getData()
         todoTableView.reloadData()
     }
     

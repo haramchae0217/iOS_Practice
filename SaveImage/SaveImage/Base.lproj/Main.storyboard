@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SaveImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-aa-Oy7">
+                                <rect key="frame" x="40" y="64" width="334" height="334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fyl-aa-Oy7" secondAttribute="height" multiplier="1:1" id="odU-Dd-z4Q"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyN-0E-NGu">
+                                <rect key="frame" x="124.5" y="418" width="165" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="앨범에서 이미지 불러오기"/>
+                                <connections>
+                                    <action selector="getImageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rOq-sA-zW3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGz-vN-0va">
+                                <rect key="frame" x="150.5" y="469" width="113" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="이미지 저장하기"/>
+                                <connections>
+                                    <action selector="saveImageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ocI-hc-2TO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fyl-aa-Oy7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0EH-8k-Pk1"/>
+                            <constraint firstItem="Fyl-aa-Oy7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8wd-zP-LHI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fyl-aa-Oy7" secondAttribute="trailing" constant="40" id="AgS-Hg-EhA"/>
+                            <constraint firstItem="EyN-0E-NGu" firstAttribute="top" secondItem="Fyl-aa-Oy7" secondAttribute="bottom" constant="20" id="BhD-Kb-Zaw"/>
+                            <constraint firstItem="EyN-0E-NGu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JUq-MG-SVp"/>
+                            <constraint firstItem="RGz-vN-0va" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="v2n-Fo-7AN"/>
+                            <constraint firstItem="RGz-vN-0va" firstAttribute="top" secondItem="EyN-0E-NGu" secondAttribute="bottom" constant="20" id="wua-ZW-ZQz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Fyl-aa-Oy7" id="nRQ-xu-ZTF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

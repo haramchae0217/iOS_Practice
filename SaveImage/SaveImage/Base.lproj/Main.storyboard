@@ -38,6 +38,14 @@
                                     <action selector="saveImageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ocI-hc-2TO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbD-Zz-GhH">
+                                <rect key="frame" x="150.5" y="520" width="113" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="이미지 삭제하기"/>
+                                <connections>
+                                    <action selector="deleteImageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ecy-OT-3ZY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,8 +55,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fyl-aa-Oy7" secondAttribute="trailing" constant="40" id="AgS-Hg-EhA"/>
                             <constraint firstItem="EyN-0E-NGu" firstAttribute="top" secondItem="Fyl-aa-Oy7" secondAttribute="bottom" constant="20" id="BhD-Kb-Zaw"/>
                             <constraint firstItem="EyN-0E-NGu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JUq-MG-SVp"/>
+                            <constraint firstItem="TbD-Zz-GhH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tbl-Qd-EpW"/>
                             <constraint firstItem="RGz-vN-0va" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="v2n-Fo-7AN"/>
                             <constraint firstItem="RGz-vN-0va" firstAttribute="top" secondItem="EyN-0E-NGu" secondAttribute="bottom" constant="20" id="wua-ZW-ZQz"/>
+                            <constraint firstItem="TbD-Zz-GhH" firstAttribute="top" secondItem="RGz-vN-0va" secondAttribute="bottom" constant="20" id="zBD-BK-qng"/>
                         </constraints>
                     </view>
                     <connections>

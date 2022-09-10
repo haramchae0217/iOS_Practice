@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
+    var image: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,11 @@ class ViewController: UIViewController {
     
 
     @IBAction func saveImageButtonClicked(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func deleteImageButtonClicked(_ sender: UIButton) {
+    
     }
     
 }
@@ -43,7 +49,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             newImage = possibleImage
         }
-        
+        image = newImage
         self.imageView.image = newImage
         picker.dismiss(animated: true)
     }

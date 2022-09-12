@@ -31,6 +31,14 @@ class SaveImageListViewController: UIViewController {
         saveImageTableView.delegate = self
         saveImageTableView.dataSource = self
     }
+    
+    func showAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let doneButton = UIAlertAction(title: "확인", style: .cancel)
+        
+        alert.addAction(doneButton)
+        present(alert, animated: true)
+    }
 
 }
 
@@ -55,4 +63,22 @@ extension SaveImageListViewController: UITableViewDataSource {
         return imageCount
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .normal, title: "삭제") { _, _, completion in
+            if let cell = tableView.cellForRow(at: indexPath) as? ImageTableViewCell, let name = cell.imageNameLabel.text {
+                ImageManager.shared.deleteImage(name: name) { onSuccess in
+                    if onSuccess {
+                        self.showAlert(title: "삭제 성공", msg: "삭제성공")
+                        tableView.reloadData()
+                    } else {
+                        self.showAlert(title: "삭제 실패", msg: "삭제실패")
+                    }
+                }
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }

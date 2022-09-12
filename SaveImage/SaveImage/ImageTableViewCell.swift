@@ -10,5 +10,6 @@ import UIKit
 class ImageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var saveImageView: UIImageView!
+    @IBOutlet weak var imageNameLabel: UILabel!
     
 }

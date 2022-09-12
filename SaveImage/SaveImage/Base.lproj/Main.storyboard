@@ -98,19 +98,29 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GQ0-Vv-4SD">
-                                                    <rect key="frame" x="100" y="7.5" width="214" height="214"/>
+                                                    <rect key="frame" x="10" y="10" width="209" height="209"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="GQ0-Vv-4SD" secondAttribute="height" multiplier="1:1" id="Xmf-tc-uKZ"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zig-N6-Csx">
+                                                    <rect key="frame" x="229" y="104" width="135" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="GQ0-Vv-4SD" secondAttribute="trailing" constant="100" id="G9i-gP-MZl"/>
-                                                <constraint firstItem="GQ0-Vv-4SD" firstAttribute="leading" secondItem="lhT-jp-68p" secondAttribute="leading" constant="100" id="JzW-nj-bbx"/>
-                                                <constraint firstItem="GQ0-Vv-4SD" firstAttribute="centerY" secondItem="lhT-jp-68p" secondAttribute="centerY" id="xbA-WV-DDn"/>
+                                                <constraint firstItem="zig-N6-Csx" firstAttribute="centerY" secondItem="lhT-jp-68p" secondAttribute="centerY" id="664-FO-GvR"/>
+                                                <constraint firstItem="GQ0-Vv-4SD" firstAttribute="leading" secondItem="lhT-jp-68p" secondAttribute="leading" constant="10" id="JzW-nj-bbx"/>
+                                                <constraint firstItem="GQ0-Vv-4SD" firstAttribute="top" secondItem="lhT-jp-68p" secondAttribute="top" constant="10" id="Ryf-D4-fLc"/>
+                                                <constraint firstItem="zig-N6-Csx" firstAttribute="leading" secondItem="GQ0-Vv-4SD" secondAttribute="trailing" constant="10" id="g1p-vl-SMo"/>
+                                                <constraint firstAttribute="trailing" secondItem="zig-N6-Csx" secondAttribute="trailing" constant="50" id="hQ5-rU-DBl"/>
+                                                <constraint firstAttribute="bottom" secondItem="GQ0-Vv-4SD" secondAttribute="bottom" constant="10" id="sLw-w5-0jh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageNameLabel" destination="zig-N6-Csx" id="Ccw-SH-swu"/>
                                             <outlet property="saveImageView" destination="GQ0-Vv-4SD" id="tPH-NC-d4x"/>
                                         </connections>
                                     </tableViewCell>

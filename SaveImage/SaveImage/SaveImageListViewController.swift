@@ -45,6 +45,8 @@ extension SaveImageListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ImageTableViewCell else { return UITableViewCell() }
         let image = ImageManager.shared.getImage(name: "\(indexPath.row).jpg") ?? UIImage(systemName: "pencil.circle.fill")
         cell.saveImageView.image = image
+        cell.imageNameLabel.text = "\(indexPath.row).jpg"
+        
         return cell
     }
     
@@ -52,4 +54,5 @@ extension SaveImageListViewController: UITableViewDataSource {
         
         return imageCount
     }
+    
 }

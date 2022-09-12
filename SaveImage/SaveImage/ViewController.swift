@@ -36,10 +36,16 @@ class ViewController: UIViewController {
         self.imagePicker.delegate = self
     }
     
+    func showAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let doneButton = UIAlertAction(title: "확인", style: .cancel)
+        
+        alert.addAction(doneButton)
+        present(alert, animated: true)
+    }
+    
     @IBAction func moveViewControllerClicked(_ sender: UIBarButtonItem) {
-        
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "imageVC") as? SaveImageListViewController else { return }
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -55,9 +61,11 @@ class ViewController: UIViewController {
             if onSuccess {
                 print("저장 완료")
                 self.imageCount += 1
-                UserDefaults.standard.set("\(self.imageCount)", forKey: "")
+                UserDefaults.standard.set("\(self.imageCount)", forKey: "imageNumber")
+                self.showAlert(title: "👌", msg: "이미지가 저장되었습니다.")
             } else {
                 print("저장 실패")
+                self.showAlert(title: "🖕", msg: "이미지 저장에 실패하였습니다.")
             }
         }
     }

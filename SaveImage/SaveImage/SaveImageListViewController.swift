@@ -11,20 +11,26 @@ class SaveImageListViewController: UIViewController {
 
     @IBOutlet weak var saveImageTableView: UITableView!
     
-    var imageCount: Int = 0
+    var imageList: [(UIImage, Int)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
-        
+        configureGetImage()
+    }
+    
+    func configureGetImage() {
         if let imageNumber = UserDefaults.standard.string(forKey: "imageNumber"), let count = Int(imageNumber) {
-            imageCount = count
-            // for문을 통해 image들 가져옴
+            for i in 0..<count {
+                if let image = ImageManager.shared.getImage(name: "\(i).jpg") {
+                    imageList.append((image, i))
+                }
+            }
+            
         } else {
             UserDefaults.standard.set("0", forKey: "imageNumber")
         }
-        
     }
     
     func configureTableView() {
@@ -51,34 +57,31 @@ extension SaveImageListViewController: UITableViewDelegate {
 extension SaveImageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ImageTableViewCell else { return UITableViewCell() }
-        let image = ImageManager.shared.getImage(name: "\(indexPath.row).jpg") ?? UIImage(systemName: "pencil.circle.fill")
-        cell.saveImageView.image = image
-        cell.imageNameLabel.text = "\(indexPath.row).jpg"
+        let image = imageList[indexPath.row]
+        cell.saveImageView.image = image.0
+        cell.imageNameLabel.text = "\(image.1).jpg"
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return imageCount
+        return imageList.count
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .normal, title: "삭제") { _, _, completion in
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             if let cell = tableView.cellForRow(at: indexPath) as? ImageTableViewCell, let name = cell.imageNameLabel.text {
                 ImageManager.shared.deleteImage(name: name) { onSuccess in
                     if onSuccess {
                         self.showAlert(title: "삭제 성공", msg: "삭제성공")
-                        tableView.reloadData()
+                        self.imageList.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .fade)
                     } else {
                         self.showAlert(title: "삭제 실패", msg: "삭제실패")
                     }
                 }
-                completion(true)
-            } else {
-                completion(false)
             }
         }
-        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }

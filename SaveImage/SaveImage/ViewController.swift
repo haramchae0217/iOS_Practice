@@ -19,15 +19,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         imageView.image = UIImage(systemName: "folder.fill")
-        
+        configureUD()
+        configureImagePicker()
+    }
+    
+    func configureUD() {
         if let imageNumber = UserDefaults.standard.string(forKey: "imageNumber"), let count = Int(imageNumber) {
             imageCount = count
             // for문을 통해 image들 가져옴
         } else {
             UserDefaults.standard.set("0", forKey: "")
         }
-        
-        configureImagePicker()
     }
     
     func configureImagePicker() {

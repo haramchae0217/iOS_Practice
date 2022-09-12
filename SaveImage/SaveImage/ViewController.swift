@@ -37,15 +37,7 @@ class ViewController: UIViewController {
         self.imagePicker.allowsEditing = true
         self.imagePicker.delegate = self
     }
-    
-    func showAlert(title: String, msg: String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "확인", style: .cancel)
-        
-        alert.addAction(doneButton)
-        present(alert, animated: true)
-    }
-    
+
     @IBAction func moveViewControllerClicked(_ sender: UIBarButtonItem) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "imageVC") as? SaveImageListViewController else { return }
         self.navigationController?.pushViewController(vc, animated: true)

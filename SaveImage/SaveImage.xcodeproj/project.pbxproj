@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		83486BC028CECDD70025554E /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83486BBF28CECDD70025554E /* ImageTableViewCell.swift */; };
 		83486BC228CECE120025554E /* SaveImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83486BC128CECE120025554E /* SaveImageListViewController.swift */; };
+		83486BC428CEDE9F0025554E /* UIAlertController++Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83486BC328CEDE9F0025554E /* UIAlertController++Extension.swift */; };
 		83BB1C3128C997F000376429 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB1C3028C997F000376429 /* AppDelegate.swift */; };
 		83BB1C3328C997F000376429 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB1C3228C997F000376429 /* SceneDelegate.swift */; };
 		83BB1C3528C997F000376429 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB1C3428C997F000376429 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		83486BBF28CECDD70025554E /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		83486BC128CECE120025554E /* SaveImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageListViewController.swift; sourceTree = "<group>"; };
+		83486BC328CEDE9F0025554E /* UIAlertController++Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController++Extension.swift"; sourceTree = "<group>"; };
 		83BB1C2D28C997F000376429 /* SaveImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB1C3028C997F000376429 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83BB1C3228C997F000376429 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				83BB1C4428C999CF00376429 /* ImageManager.swift */,
 				83BB1C3628C997F000376429 /* Main.storyboard */,
 				83486BC128CECE120025554E /* SaveImageListViewController.swift */,
+				83486BC328CEDE9F0025554E /* UIAlertController++Extension.swift */,
 				83486BBF28CECDD70025554E /* ImageTableViewCell.swift */,
 				83BB1C3928C997F100376429 /* Assets.xcassets */,
 				83BB1C3B28C997F100376429 /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 				83BB1C3328C997F000376429 /* SceneDelegate.swift in Sources */,
 				83BB1C4528C999CF00376429 /* ImageManager.swift in Sources */,
 				83486BC228CECE120025554E /* SaveImageListViewController.swift in Sources */,
+				83486BC428CEDE9F0025554E /* UIAlertController++Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

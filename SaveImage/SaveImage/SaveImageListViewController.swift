@@ -37,15 +37,6 @@ class SaveImageListViewController: UIViewController {
         saveImageTableView.delegate = self
         saveImageTableView.dataSource = self
     }
-    
-    func showAlert(title: String, msg: String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "확인", style: .cancel)
-        
-        alert.addAction(doneButton)
-        present(alert, animated: true)
-    }
-
 }
 
 extension SaveImageListViewController: UITableViewDelegate {

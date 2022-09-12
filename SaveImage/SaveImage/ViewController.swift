@@ -13,9 +13,19 @@ class ViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     var image: UIImage? = nil
+    var imageCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageView.image = UIImage(systemName: "folder.fill")
+        
+        if let imageNumber = UserDefaults.standard.string(forKey: "imageNumber"), let count = Int(imageNumber) {
+            imageCount = count
+            // for문을 통해 image들 가져옴
+        } else {
+            UserDefaults.standard.set("0", forKey: "")
+        }
         
         configureImagePicker()
     }
@@ -26,13 +36,30 @@ class ViewController: UIViewController {
         self.imagePicker.delegate = self
     }
     
+    @IBAction func moveViewControllerClicked(_ sender: UIBarButtonItem) {
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "imageVC") as? SaveImageListViewController else { return }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func getImageButtonClicked(_ sender: UIButton) {
         self.present(self.imagePicker, animated: true)
     }
     
 
     @IBAction func saveImageButtonClicked(_ sender: UIButton) {
+        guard let image = imageView.image else { return }
         
+        ImageManager.shared.saveImage(image: image, pathName: "\(imageCount).jpg") { onSuccess in
+            if onSuccess {
+                print("저장 완료")
+                self.imageCount += 1
+                UserDefaults.standard.set("\(self.imageCount)", forKey: "")
+            } else {
+                print("저장 실패")
+            }
+        }
     }
     
     @IBAction func deleteImageButtonClicked(_ sender: UIButton) {

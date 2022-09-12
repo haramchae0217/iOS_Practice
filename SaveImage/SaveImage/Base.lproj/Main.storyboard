@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n9A-ai-Gpz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fyl-aa-Oy7">
-                                <rect key="frame" x="40" y="64" width="334" height="334"/>
+                                <rect key="frame" x="40" y="108" width="334" height="334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fyl-aa-Oy7" secondAttribute="height" multiplier="1:1" id="odU-Dd-z4Q"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyN-0E-NGu">
-                                <rect key="frame" x="124.5" y="418" width="165" height="31"/>
+                                <rect key="frame" x="124.5" y="462" width="165" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="앨범에서 이미지 불러오기"/>
                                 <connections>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGz-vN-0va">
-                                <rect key="frame" x="150.5" y="469" width="113" height="31"/>
+                                <rect key="frame" x="150.5" y="513" width="113" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="이미지 저장하기"/>
                                 <connections>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbD-Zz-GhH">
-                                <rect key="frame" x="150.5" y="520" width="113" height="31"/>
+                                <rect key="frame" x="150.5" y="564" width="113" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="이미지 삭제하기"/>
                                 <connections>
@@ -61,13 +61,96 @@
                             <constraint firstItem="TbD-Zz-GhH" firstAttribute="top" secondItem="RGz-vN-0va" secondAttribute="bottom" constant="20" id="zBD-BK-qng"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="7NK-KQ-Fuj">
+                        <barButtonItem key="rightBarButtonItem" title="Move" id="wpS-M7-Poa">
+                            <connections>
+                                <action selector="moveViewControllerClicked:" destination="BYZ-38-t0r" id="PhG-rf-qd5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="Fyl-aa-Oy7" id="nRQ-xu-ZTF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="103"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="102.45535714285714"/>
+        </scene>
+        <!--Save Image List View Controller-->
+        <scene sceneID="yfs-Pj-sNh">
+            <objects>
+                <viewController storyboardIdentifier="imageVC" id="gKj-sv-jxE" customClass="SaveImageListViewController" customModule="SaveImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xh5-8O-fSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="31j-v3-t2F">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="229" id="vF1-fZ-cHt" customClass="ImageTableViewCell" customModule="SaveImage" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="229"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vF1-fZ-cHt" id="lhT-jp-68p">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="229"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GQ0-Vv-4SD">
+                                                    <rect key="frame" x="100" y="7.5" width="214" height="214"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="GQ0-Vv-4SD" secondAttribute="height" multiplier="1:1" id="Xmf-tc-uKZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="GQ0-Vv-4SD" secondAttribute="trailing" constant="100" id="G9i-gP-MZl"/>
+                                                <constraint firstItem="GQ0-Vv-4SD" firstAttribute="leading" secondItem="lhT-jp-68p" secondAttribute="leading" constant="100" id="JzW-nj-bbx"/>
+                                                <constraint firstItem="GQ0-Vv-4SD" firstAttribute="centerY" secondItem="lhT-jp-68p" secondAttribute="centerY" id="xbA-WV-DDn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="saveImageView" destination="GQ0-Vv-4SD" id="tPH-NC-d4x"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1nO-aN-6aY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="31j-v3-t2F" firstAttribute="top" secondItem="1nO-aN-6aY" secondAttribute="top" id="KmZ-G0-fYb"/>
+                            <constraint firstItem="1nO-aN-6aY" firstAttribute="bottom" secondItem="31j-v3-t2F" secondAttribute="bottom" id="KrO-hy-NX4"/>
+                            <constraint firstItem="1nO-aN-6aY" firstAttribute="trailing" secondItem="31j-v3-t2F" secondAttribute="trailing" id="Ktg-mx-0ug"/>
+                            <constraint firstItem="31j-v3-t2F" firstAttribute="leading" secondItem="1nO-aN-6aY" secondAttribute="leading" id="zWe-2K-hnh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="saveImageTableView" destination="31j-v3-t2F" id="FSD-S2-dyh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ael-pI-dYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843.4782608695652" y="102.45535714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ehF-Vy-c2h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n9A-ai-Gpz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Rx-N9-0u1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wmw-Zr-WWA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xLT-Zn-G5V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
         </scene>
     </scenes>
     <resources>

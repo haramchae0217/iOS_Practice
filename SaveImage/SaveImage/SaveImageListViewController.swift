@@ -27,7 +27,6 @@ class SaveImageListViewController: UIViewController {
                     imageList.append((image, i))
                 }
             }
-            
         } else {
             UserDefaults.standard.set("0", forKey: "imageNumber")
         }

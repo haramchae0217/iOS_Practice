@@ -62,11 +62,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func deleteImageButtonClicked(_ sender: UIButton) {
-    
-    }
-    
+   
 }
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
